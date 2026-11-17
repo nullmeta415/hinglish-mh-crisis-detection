@@ -1,0 +1,27 @@
+{
+  "routing": "static",
+  "gate": "elu",
+  "fusion": "attention",
+  "prim_caps": 32,
+  "prim_dim": 16,
+  "class_dim": 16,
+  "fusion_dim": 128,
+  "epochs": 60,
+  "lr": 0.001,
+  "batch": 16,
+  "focal_gamma": 2.0,
+  "contrast_w": 0.2,
+  "frozen_backbones": true,
+  "seed": 42,
+  "text_dim": 768,
+  "emo_dim": 768,
+  "emo_model": "MilaNLProc/xlm-emo-t",
+  "temp_feats": [
+    "month_t",
+    "day_t",
+    "hour_t",
+    "weekday_t",
+    "is_working_hour_t",
+    "is_weekend_t"
+  ]
+}

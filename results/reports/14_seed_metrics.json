@@ -1,7 +1,7 @@
 {
   "part": "stage5_part5.1_statistical_robustness",
   "version": "1.0",
-  "principle": "P1 (system-computed); P3 (TEST scored once/seed, no selection on TEST); E5.1 multi-seed CI",
+  "principle": "P1 (system-computed); P3 (TEST scored once/seed, no selection on TEST);  multi-seed CI",
   "seeds": [
     42,
     2023,

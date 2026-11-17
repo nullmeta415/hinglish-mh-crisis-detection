@@ -1,7 +1,7 @@
 {
   "part": "stage5_part5.2_classification_generalization_ablation",
   "version": "1.0",
-  "principle": "P1; P3 (train-YT/test-Reddit+Twitter = cross-platform generalization); P6 (ablation+efficiency); E5.5 classification suite; E5.3 generalization; E5.6 ablation battery; E5.7 efficiency",
+  "principle": "P1; P3 (train-YT/test-Reddit+Twitter = cross-platform generalization); P6 (ablation+efficiency);  classification suite;  generalization;  ablation battery;  efficiency",
   "seeds": [
     42,
     2023,
@@ -162,7 +162,7 @@
     ]
   },
   "cross_platform_generalization": {
-    "setup": "train on YouTube (in-domain), test on frozen Reddit+Twitter (cross-platform) — P3 / E5.3",
+    "setup": "train on YouTube (in-domain), test on frozen Reddit+Twitter (cross-platform) — P3 / ",
     "in_domain_kfold_macro_f1": 0.8337,
     "cross_platform_test_macro_f1": 0.4648,
     "generalization_gap_macro_f1": 0.3689,
@@ -228,11 +228,11 @@
         "Crisis": 24
       }
     },
-    "confound_note": "Reddit ~90% Neutral vs Twitter balanced -> raw per-platform gaps partly reflect composition (established in Part 4.3); the in-domain->cross-platform gap is the headline generalization finding."
+    "confound_note": "Reddit ~90% Neutral vs Twitter balanced -> raw per-platform gaps partly reflect composition (established in notebook 13); the in-domain->cross-platform gap is the headline generalization finding."
   },
   "ablation_battery": {
     "architecture_3.3": {
-      "source": "data/stage3_model/ablation_report.json (Part 3.3, E3.2-E3.5)",
+      "source": "data/stage3_model/ablation_report.json (notebook 10, -)",
       "baseline": {
         "config": {
           "routing": "static",
@@ -246,9 +246,9 @@
         "tier3_recall": 0.0435,
         "roc_auc": 0.8197,
         "n_params": 805572,
-        "train_secs": 87.8,
-        "epoch_ms": 2194.3,
-        "infer_ms_per_sample": 0.067
+        "train_secs": 133.5,
+        "epoch_ms": 3338.7,
+        "infer_ms_per_sample": 0.1155
       },
       "routing": [
         {
@@ -348,7 +348,7 @@
       ]
     },
     "backbone_2.3_E2.7": {
-      "source": "backbone_benchmark{,_finetuned}.json (Part 2.3)",
+      "source": "backbone_benchmark{,_finetuned}.json (notebook 07)",
       "frozen_probe@128": [
         {
           "backbone": "muril",
@@ -386,7 +386,7 @@
       "note": "gated indic-bert=403 -> ungated IndicBERTv2 substituted; IndicBERTv2 best FT (MCC +0.160)."
     },
     "token_cap_2.3_E2.8": {
-      "source": "token_sensitivity.json (Part 2.3)",
+      "source": "token_sensitivity.json (notebook 07)",
       "by_backbone": {
         "muril": {
           "f1_128": 0.3322,
@@ -463,13 +463,13 @@
     }
   },
   "efficiency": {
-    "source": "data/stage3_model/efficiency.json (Part 3.3, E5.7)",
+    "source": "data/stage3_model/efficiency.json (notebook 10, )",
     "trainable_params_head": 805572,
-    "train_seconds_total": 87.8,
-    "epoch_ms": 2194.3,
-    "infer_ms_per_sample": 0.067,
-    "note_backbones": "MuRIL + MilaNLProc/xlm-emo-t are FROZEN ; their params are not trained and are embedded once (cached). Trainable count is the fusion head only."
+    "train_seconds_total": 133.5,
+    "epoch_ms": 3338.7,
+    "infer_ms_per_sample": 0.1155,
+    "note_backbones": "MuRIL + MilaNLProc/xlm-emo-t are FROZEN; their params are not trained and are embedded once (cached). Trainable count is the fusion head only."
   },
   "benchmarking_caveat": "Cross-study F1/accuracy values are NOT directly comparable across papers — different datasets, label schemes, splits, and protocols (Bhatt 2026; Garg 2023). We compare only within this project's fixed frozen-TEST protocol.",
-  "note": "Pilot-scale: classification CIs bound SEED stability; the in-domain(0.834)->cross-platform(0.465) gap is the headline generalization finding; Crisis recall ~0 carries through (13 test posts). Ablation rows REUSE prior reports (cited) except the augmentation rows, computed here."
+  "honest_note": "Pilot-scale: classification CIs bound SEED stability; the in-domain(0.834)->cross-platform(0.465) gap is the headline generalization finding; Crisis recall ~0 carries through (13 test posts). Ablation rows REUSE prior reports (cited) except the augmentation rows, computed here."
 }

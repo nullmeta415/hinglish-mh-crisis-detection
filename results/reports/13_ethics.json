@@ -1,7 +1,7 @@
 {
   "part": "stage4_part4.3_ethics_accountability",
   "version": "1.0",
-  "principle": "P1 (automated methodology); P3 (frozen TEST); E4.6 ethics/accountability/disclaimer",
+  "principle": "P1 (automated methodology); P3 (frozen TEST);  ethics/accountability/disclaimer",
   "screening_aid_disclaimer": "SCREENING AID, NOT A DIAGNOSTIC TOOL. This system produces tier-level risk SIGNALS to help prioritise human attention across large volumes of multilingual social-media text. Its outputs are NOT clinical diagnoses and carry no clinical authority. Every flagged case REQUIRES review by a qualified human before any action is taken. The system MUST NOT be used for autonomous decisions affecting individuals.",
   "intended_use": [
     "Research into cross-platform, multilingual (Hinglish) mental-health signal detection.",
@@ -13,7 +13,7 @@
     "Surveillance, individual targeting, or attempts to de-anonymise users.",
     "Crisis triage in the current pilot-scale form (Tier-3 recall is 0)."
   ],
-  "human_oversight_vs_P1": "P1 ('fully automatic') governs the RESEARCH METHODOLOGY — labelling is automated weak/distant supervision because no clinical experts were available . It does NOT license unsupervised DEPLOYMENT: a deployed system requires mandatory human review (the disclaimer). The two are complementary — automated to BUILD the evidence, human-overseen to ACT on it.",
+  "human_oversight_vs_P1": "P1 ('fully automatic') governs the RESEARCH METHODOLOGY — labelling is automated weak/distant supervision because no clinical experts were available. It does NOT license unsupervised DEPLOYMENT: a deployed system requires mandatory human review (the disclaimer). The two are complementary — automated to BUILD the evidence, human-overseen to ACT on it.",
   "privacy_posture": {
     "user_ids": "Salted SHA-256 anonymised IDs only; raw usernames are NEVER persisted.",
     "salt": "A stable secret salt (kept out of all artefacts/logs) so IDs are consistent yet non-reversible.",
@@ -120,7 +120,7 @@
     "Neutral-bias: distress posts are frequently misrouted to Neutral (false negatives) — 'Neutral' must NOT be read as 'safe/clear'; the cost of a missed distress case is asymmetric and is the priority for scale-up.",
     "Pilot-scale training (202 TRAIN rows) — all numbers are architecture/machinery-validating, not deployable; publishable performance requires the deferred data scale-up + GPU fine-tuning.",
     "No demographic labels were collected (privacy by design) — a demographic fairness audit is NOT possible and is named as future work; only platform parity is computable here.",
-    "Explanations are of a pilot-scale model — trigger CONTENT sharpens at scale (Stage-4 caveat)."
+    "Explanations are of a pilot-scale model — trigger CONTENT sharpens at scale (Objective 4 caveat)."
   ],
-  "accountability": "Outputs are explainable (Part 4.1 multi-method attributions; Part 4.2 expert-free clinical face-validity) and auditable (versioned lexicon/anchor/translit tables; seeded, reproducible runs). The unsupportable '85% expert-alignment' claim has been RETIRED (Part 4.2); a clinician kappa-study is named future work."
+  "accountability": "Outputs are explainable (notebook 11 multi-method attributions; notebook 12 expert-free clinical face-validity) and auditable (versioned lexicon/anchor/translit tables; seeded, reproducible runs). The unsupportable '85% expert-alignment' claim has been RETIRED (notebook 12); a clinician kappa-study is named future work."
 }

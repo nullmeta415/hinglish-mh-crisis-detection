@@ -1,10 +1,10 @@
 {
   "part": "stage4_part4.2_global_face_validity",
   "version": "1.0",
-  "principle": "P1 (no human); P3 (frozen TEST); P4 (rank geometry); E4.2 two-way cross-check; E4.3 expert-free clinical face-validity",
+  "principle": "P1 (no human); P3 (frozen TEST); P4 (rank geometry);  two-way cross-check;  expert-free clinical face-validity",
   "retired_claim": {
     "claim": "85% expert alignment (primary paper)",
-    "status": "RETIRED — no clinical experts are available (P1 / E4.3); the number is unsupportable.",
+    "status": "RETIRED — no clinical experts are available (P1 / ); the number is unsupportable.",
     "replaced_by": [
       "clinical-lexicon overlap %",
       "multi-method XAI agreement (SHAP/LIME/IG)",
@@ -104,5 +104,5 @@
     }
   ],
   "topk_per_tier": 8,
-  "note": "Pilot-scale: global rankings over 23 Part-4.1 instances; Crisis has 0 instances (recall 0; 13 Crisis test posts) -> reported with N, not faked. Neutral is the negative control (expected ~0% clinical overlap). The cross-check / face-validity MACHINERY is validated; trigger content and the per-tier overlap %% sharpen at the deferred data scale-up. Statistical concordance is computed only where >=3 words are shared with the small (20-anchor) point-biserial set; otherwise reported as overlap/named matches."
+  "honest_note": "Pilot-scale: global rankings over 23 notebook 11 instances; Crisis has 0 instances (recall 0; 13 Crisis test posts) -> reported with N, not faked. Neutral is the negative control (expected ~0% clinical overlap). The cross-check / face-validity MACHINERY is validated; trigger content and the per-tier overlap %% sharpen at the deferred data scale-up. Statistical concordance is computed only where >=3 words are shared with the small (20-anchor) point-biserial set; otherwise reported as overlap/named matches."
 }

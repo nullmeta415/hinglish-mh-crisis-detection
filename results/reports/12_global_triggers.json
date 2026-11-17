@@ -1,7 +1,7 @@
 {
   "part": "stage4_part4.2_global_triggers",
   "version": "1.0",
-  "principle": "D5 mean-|SHAP| global ranking per Tier; grouped by true Tier; from Part-4.1 local attributions",
+  "principle": "D5 mean-|SHAP| global ranking per Tier; grouped by true Tier; from notebook 11 local attributions",
   "topk": 8,
   "per_tier": {
     "Neutral": {
@@ -354,5 +354,5 @@
       }
     }
   },
-  "note": "Pilot-scale: global rankings over 23 Part-4.1 instances; Crisis has 0 instances (recall 0; 13 Crisis test posts) -> reported with N, not faked. Neutral is the negative control (expected ~0% clinical overlap). The cross-check / face-validity MACHINERY is validated; trigger content and the per-tier overlap %% sharpen at the deferred data scale-up. Statistical concordance is computed only where >=3 words are shared with the small (20-anchor) point-biserial set; otherwise reported as overlap/named matches."
+  "honest_note": "Pilot-scale: global rankings over 23 notebook 11 instances; Crisis has 0 instances (recall 0; 13 Crisis test posts) -> reported with N, not faked. Neutral is the negative control (expected ~0% clinical overlap). The cross-check / face-validity MACHINERY is validated; trigger content and the per-tier overlap %% sharpen at the deferred data scale-up. Statistical concordance is computed only where >=3 words are shared with the small (20-anchor) point-biserial set; otherwise reported as overlap/named matches."
 }

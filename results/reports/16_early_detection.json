@@ -1,7 +1,7 @@
 {
   "part": "stage5_part5.3_early_detection_validity",
   "version": "1.0",
-  "principle": "P1 (system-computed); P3 (frozen Reddit+Twitter histories); P4 (cosine drift); P5 (lead-time as-measured, bounded case study); E5.2/E5.4 ERDE; E5.9 validity synthesis",
+  "principle": "P1 (system-computed); P3 (frozen Reddit+Twitter histories); P4 (cosine drift); P5 (lead-time as-measured, bounded case study); / ERDE;  validity synthesis",
   "erde": {
     "config": {
       "o_values": [
@@ -525,7 +525,7 @@
     }
   },
   "drift_velocity": {
-    "source": "data/stage3_model/drift_report.json (Part 3.1, E3.6 — cosine, P4)",
+    "source": "data/stage3_model/drift_report.json (notebook 08,  — cosine, P4)",
     "geometry": "cosine (primary, P4); Euclidean reported alongside",
     "n_users": 147,
     "n_posts": 693,
@@ -534,19 +534,19 @@
     "drift_velocity_cosine_std": 0.002167,
     "drift_velocity_euclidean_mean": 0.05196,
     "legacy_paper_euclidean": 13.0299,
-    "scale_caveat": "The primary paper's Euclidean Drift-Velocity 13.0299 and our cosine 0.0037 are NOT directly comparable (different embedding space, no normalisation, different metric). Cosine is scale-free and bounded, consistent with the P4 cosine geometry used throughout .",
+    "scale_caveat": "The primary paper's Euclidean Drift-Velocity 13.0299 and our cosine 0.0037 are NOT directly comparable (different embedding space, no normalisation, different metric). Cosine is scale-free and bounded, consistent with the P4 cosine geometry used throughout.",
     "bounded_note": "Drift is a bounded case study: only ~1 user has >= 10 posts (Couto's full-matrix bar); magnitudes are provisional pending the deferred data scale-up."
   },
   "validity_synthesis": {
     "dimension_1_statistical": {
-      "source": "Part 5.1 seed_metrics.json + significance.json",
+      "source": "notebook 14 seed_metrics.json + significance.json",
       "full_model_macro_f1_ci": null,
       "full_model_mcc_ci": null,
       "n_comparisons_surviving_bh_fdr": null,
       "read": "Full model is stable across 5 seeds and beats degenerate + probe baselines under BH-FDR; pilot-scale CIs bound SEED stability, not population (stated)."
     },
     "dimension_2_classification": {
-      "source": "Part 5.2 validation_report.json",
+      "source": "notebook 15 validation_report.json",
       "macro_f1_ci": {
         "mean": 0.4648,
         "sd": 0.0244,
@@ -564,14 +564,14 @@
       "read": "Per-tier suite ±CI; the Neutral-bias and Crisis recall ~0 are explicit (13 Crisis test posts)."
     },
     "dimension_3_generalization": {
-      "source": "Part 5.2 validation_report.json",
+      "source": "notebook 15 validation_report.json",
       "in_domain_kfold_macro_f1": 0.8337,
       "cross_platform_test_macro_f1": 0.4648,
       "generalization_gap": 0.3689,
-      "read": "Train-YouTube/test-Reddit+Twitter domain shift quantified ('Snapshot Fallacy'): the in-domain -> cross-platform gap is the central finding."
+      "read": "Train-YouTube/test-Reddit+Twitter domain shift quantified ('Snapshot Fallacy'): the in-domain -> cross-platform gap is the central honest finding."
     },
     "dimension_4_temporal_early_detection": {
-      "source": "Part 5.3 (this notebook)",
+      "source": "notebook 16 (this notebook)",
       "ERDE_5": 0.1308,
       "ERDE_50": 0.1029,
       "decision_confusion": {
@@ -586,10 +586,10 @@
     },
     "validity_framing": {
       "claim": "Statistical + behavioural validity for a SCREENING AID that REQUIRES human review — NOT a clinician-validated diagnostic instrument.",
-      "no_human_in_loop": "Every validation number (CIs, FDR, ablations, ERDE, drift velocity) is system-computed; the clinician kappa-study remains named future work .",
-      "deployment_distinction": "P1 (no human in the METHODOLOGY loop) is not a claim of autonomous DEPLOYMENT: a deployed screening aid still requires human review (Part 4.3).",
+      "no_human_in_loop": "Every validation number (CIs, FDR, ablations, ERDE, drift velocity) is system-computed ; the clinician kappa-study remains named future work.",
+      "deployment_distinction": "P1 (no human in the METHODOLOGY loop) is not a claim of autonomous DEPLOYMENT: a deployed screening aid still requires human review (notebook 13).",
       "scope": "The validation PROTOCOL (reproducible, CI-bounded, FDR-corrected, multi-dimensional, with measured early-detection) is the contribution; magnitudes are pilot-scale and provisional pending the deferred data scale-up."
     }
   },
-  "note": "Early detection is a BOUNDED CASE STUDY: drift subset has 37 users/151 posts but only ~1 user >=10 posts and 49 users >=5 posts. The Neutral-bias + Crisis recall ~0 carry through, so the model fires few/no Tier->=2 alerts -> ERDE is dominated by FN cost and a lead-time is largely unmeasurable at this scale. This is reported honestly: the end-to-end ERDE PROTOCOL on the real model is the contribution; meaningful lead-times need more long user histories from the deferred data scale-up."
+  "honest_note": "Early detection is a BOUNDED CASE STUDY: drift subset has 37 users/151 posts but only ~1 user >=10 posts and 49 users >=5 posts. The Neutral-bias + Crisis recall ~0 carry through, so the model fires few/no Tier->=2 alerts -> ERDE is dominated by FN cost and a lead-time is largely unmeasurable at this scale. This is reported honestly: the end-to-end ERDE PROTOCOL on the real model is the contribution; meaningful lead-times need more long user histories from the deferred data scale-up."
 }

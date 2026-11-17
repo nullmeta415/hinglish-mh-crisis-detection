@@ -77,5 +77,5 @@
       "significant_q05": true
     }
   ],
-  "note": "Pilot-scale, 5 seeds: low statistical power; some effects may not survive FDR correction -> reported honestly (a non-significant result is a finding, not a failure). CIs/tests bound SEED stability, not population generalization."
+  "honest_note": "Pilot-scale, 5 seeds: low statistical power; some effects may not survive FDR correction -> reported honestly (a non-significant result is a finding, not a failure). CIs/tests bound SEED stability, not population generalization."
 }

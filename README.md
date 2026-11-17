@@ -83,6 +83,7 @@ hinglish-mental-health-detection/
 ├── resources/           ← word lists & lookup tables the notebooks use
 ├── data/
 │   ├── release/          ← post IDs + labels for all 4,614 posts (no post text, see §6)
+│   ├── stage3_model/     ← trained checkpoint + config used by the demo
 │   └── sample/           ← a tiny synthetic example showing the input format
 ├── experiments/          ← BGE-M3 + XGBoost baseline and training-curve logging (paper baselines)
 ├── figures/              ← scripts that draw the paper's figures
@@ -128,8 +129,8 @@ python scripts/run_pipeline.py 09_model_architecture  # or resume from any singl
 `streamlit run demo/app.py`
 ```
 
-Loads a trained checkpoint (`data/stage3_model/model_state.pt`, produced by notebook 09; it is not
-distributed here, so run the pipeline first — no retraining happens in the app) and lets you type a post in English, Hindi, or Hinglish and see, live: the predicted tier,
+Loads the trained checkpoint shipped in this repository (`data/stage3_model/model_state.pt`, 3 MB,
+seed 42, produced by notebook 09 — no retraining happens in the app) and lets you type a post in English, Hindi, or Hinglish and see, live: the predicted tier,
 a word-by-word Integrated Gradients explanation, a cross-check against the clinical lexicon, and a
 breakdown of how much the text vs. the emotion signal vs. the time of posting actually drove that
 specific prediction.

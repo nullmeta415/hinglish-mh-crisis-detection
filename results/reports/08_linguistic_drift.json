@@ -1,9 +1,9 @@
 {
   "part": "stage3_part3.1_linguistic_drift",
   "version": "1.0",
-  "principle": "P1 (no human); P3 (frozen-TEST only); P4/E3.6 (cosine, Euclidean alongside); P5 (bounded case study, logged N); E3.1 Tier-B (Couto delta-matrix / Drift Velocity)",
+  "principle": "P1 (no human); P3 (frozen-TEST only); P4/ (cosine, Euclidean alongside); P5 (bounded case study, logged N);  Tier-B (Couto delta-matrix / Drift Velocity)",
   "grounding": "Couto et al. 2025 (DCWE > TWEC; cosine > Euclidean for embedding drift)",
-  "representation": "google/muril-base-cased mean-pool (reused from Part 2.2 embeddings_test.npy; no re-train)",
+  "representation": "google/muril-base-cased mean-pool (reused from notebook 06 embeddings_test.npy; no re-train)",
   "assertions": {
     "drift_platforms": [
       "reddit",
@@ -9466,5 +9466,5 @@
       0.0
     ]
   },
-  "note": "Bounded case study: only 1 user has >=10 posts; most users have 3-4 chunks, so per-user Drift Velocity and crisis-slope are indicative, not significant. Difference-based metrics (delta-from-baseline, consecutive velocity) are emphasised because they partly cancel MuRIL's anisotropy (the Part-2.2 finding: absolute short-text cosines ~0.99); the tier-centroid sims are auxiliary narrative -- read the SHAPE/ordering, not absolute height. The full 10-chunk longitudinal drift claim (and DCWE per-word training) unlocks at the deferred data scale-up. Cosine is primary; Euclidean reported alongside ."
+  "honest_note": "Bounded case study: only 1 user has >=10 posts; most users have 3-4 chunks, so per-user Drift Velocity and crisis-slope are indicative, not significant. Difference-based metrics (delta-from-baseline, consecutive velocity) are emphasised because they partly cancel MuRIL's anisotropy (the notebook 06 finding: absolute short-text cosines ~0.99); the tier-centroid sims are auxiliary narrative -- read the SHAPE/ordering, not absolute height. The full 10-chunk longitudinal drift claim (and DCWE per-word training) unlocks at the deferred data scale-up. Cosine is primary; Euclidean reported alongside."
 }

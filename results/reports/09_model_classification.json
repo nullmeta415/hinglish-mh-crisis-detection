@@ -1,7 +1,7 @@
 {
   "part": "stage3_part3.2_architecture",
   "version": "1.0",
-  "principle": "P1; P2 (text primary, temporal auxiliary); P3 (train=youtube+synthetic, test=reddit+twitter FROZEN); E2.5b dual backbone; E3.1 Tier-A temporal; E3.2 routing; E3.3 ELU gate; E3.4 cross-modal fusion; E3.5 focal+contrastive",
+  "principle": "P1; P2 (text primary, temporal auxiliary); P3 (train=youtube+synthetic, test=reddit+twitter FROZEN);  dual backbone;  Tier-A temporal;  routing;  ELU gate;  cross-modal fusion;  focal+contrastive",
   "config": {
     "routing": "static",
     "gate": "elu",
@@ -23,7 +23,7 @@
     "emotion": "MilaNLProc/xlm-emo-t (frozen)"
   },
   "trainable_params": 805572,
-  "train_seconds": 220.4,
+  "train_seconds": 155.0,
   "device": "cpu",
   "test_metrics": {
     "accuracy": 0.7023,
@@ -84,5 +84,5 @@
     "synthetic_temporal_zero": true,
     "real_temporal_nonzero": true
   },
-  "note": "Pilot-scale architecture-correctness proof (202 TRAIN rows): real end-to-end forward/backward, real frozen-TEST predictions, all modules wired (dual backbone + capsule + routing + ELU gate + cross-modal attention fusion + focal+contrastive). Backbones FROZEN  per the Part-2.3 finding that fine-tuning 202 rows hurts. Numbers are provisional; the publishable model = data scale-up + GPU + Optuna (E3.8, Part 3.3). P-series honesty."
+  "honest_note": "Pilot-scale architecture-correctness proof (202 TRAIN rows): real end-to-end forward/backward, real frozen-TEST predictions, all modules wired (dual backbone + capsule + routing + ELU gate + cross-modal attention fusion + focal+contrastive). Backbones FROZEN per the notebook 07 finding that fine-tuning 202 rows hurts. Numbers are provisional; the publishable model = data scale-up + GPU + Optuna (, notebook 10). P-series honesty."
 }

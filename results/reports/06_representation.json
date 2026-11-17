@@ -1,7 +1,7 @@
 {
   "part": "stage2_part2.2_representation",
   "version": "1.0",
-  "principle": "P1; P4 (cosine, un-standardised); E2.2 pooling; E2.3 cosine; E2.4 anchor validation",
+  "principle": "P1; P4 (cosine, un-standardised);  pooling;  cosine;  anchor validation",
   "model": "google/muril-base-cased",
   "max_tokens": 128,
   "device": "cpu",
@@ -184,7 +184,7 @@
     "neutral_word_mean": 0.993,
     "margin_matched_minus_mismatched": 0.002,
     "margin_matched_minus_neutral": 0.0018,
-    "interpretation": "absolute cosine is inflated by MuRIL anisotropy (mismatched/neutral also score high); the positive matched-minus-mismatched/neutral MARGIN + point-biserial + t-SNE are the anisotropy-robust evidence of real Hinglish<->English mapping. Fine-tuning  is the methodology's remedy to de-anisotropise and widen the margin."
+    "interpretation": "absolute cosine is inflated by MuRIL anisotropy (mismatched/neutral also score high); the positive matched-minus-mismatched/neutral MARGIN + point-biserial + t-SNE are the anisotropy-robust evidence of real Hinglish<->English mapping. Fine-tuning is the methodology's remedy to de-anisotropise and widen the margin."
   },
   "point_biserial_anchor_vs_tier": [
     {
@@ -652,5 +652,5 @@
       "y": -8.264781951904297
     }
   ],
-  "note": "Absolute anchor cosine EXCEEDS 0.90 (mean-pool deva ~0.99), so the paper's literal >0.90 claim is reproduced -- BUT generic MuRIL embeddings are anisotropic, so mismatched and neutral word pairs also score ~0.99; the absolute number alone is therefore not evidence of semantic alignment. The anisotropy-robust evidence is the positive matched-minus-mismatched/neutral MARGIN + the point-biserial (akela/akelapan r~0.6) + the t-SNE structure. Domain-adaptive fine-tuning  is the methodology's remedy to de-anisotropise and widen the margin; reported as-measured (P-series honesty)."
+  "honest_note": "Absolute anchor cosine EXCEEDS 0.90 (mean-pool deva ~0.99), so the paper's literal >0.90 claim is reproduced -- BUT generic MuRIL embeddings are anisotropic, so mismatched and neutral word pairs also score ~0.99; the absolute number alone is therefore not evidence of semantic alignment. The anisotropy-robust evidence is the positive matched-minus-mismatched/neutral MARGIN + the point-biserial (akela/akelapan r~0.6) + the t-SNE structure. Domain-adaptive fine-tuning is the methodology's remedy to de-anisotropise and widen the margin; reported as-measured (P-series honesty)."
 }

@@ -12,9 +12,9 @@
   "sdcnl_flips": 22,
   "auto_accepted": 0,
   "auto_accepted_pct": 0.0,
-  "inter_labeler_cohen_kappa": 0.8401,
+  "inter_labeler_cohen_kappa": 0.8179,
   "kappa_interpretation": "almost perfect",
-  "label_agreement_pct": 92.41,
+  "label_agreement_pct": 91.16,
   "class_separability_silhouette": -0.0117,
   "label_quality_fallback_triggered": false,
   "tier_distribution_lexiconA": {
@@ -24,10 +24,9 @@
     "3": 61
   },
   "tier_distribution_modelB": {
-    "0": 3264,
-    "1": 563,
-    "2": 757,
-    "3": 30
+    "0": 3145,
+    "1": 532,
+    "2": 937
   },
   "tier_distribution_final": {
     "0": 3126,

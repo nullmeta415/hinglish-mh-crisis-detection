@@ -1,7 +1,7 @@
 {
   "part": "stage1_part1.4_temporal_drift",
   "version": "1.0",
-  "principle": "P1 (no human); P2 (temporal auxiliary); P3 (train=youtube, test=reddit+twitter); P5 (drift only where data supports it); E3.1 tiered temporal",
+  "principle": "P1 (no human); P2 (temporal auxiliary); P3 (train=youtube, test=reddit+twitter); P5 (drift only where data supports it);  tiered temporal",
   "decisions": {
     "D1_drift_min_posts": 3,
     "D2_max_chunks": 10,
@@ -10,7 +10,7 @@
       "reddit",
       "twitter"
     ],
-    "D5_ruminative_repetition": "deferred to Stage-2 preprocessing",
+    "D5_ruminative_repetition": "deferred to Objective 2 preprocessing",
     "D6_keep_same_day_bursts": true
   },
   "temporal_features": [

@@ -1,7 +1,7 @@
 {
   "part": "stage3_part3.3_ablations",
   "version": "1.0",
-  "principle": "P1; P3 (no selection on TEST); P6 (component + efficiency justification); E3.2/3.3/3.4/3.5",
+  "principle": "P1; P3 (no selection on TEST); P6 (component + efficiency justification); /3.3/3.4/3.5",
   "epochs": 40,
   "baseline_config": {
     "prim_caps": 32,
@@ -32,9 +32,9 @@
       "tier3_recall": 0.0435,
       "roc_auc": 0.8197,
       "n_params": 805572,
-      "train_secs": 87.8,
-      "epoch_ms": 2194.3,
-      "infer_ms_per_sample": 0.067
+      "train_secs": 133.5,
+      "epoch_ms": 3338.7,
+      "infer_ms_per_sample": 0.1155
     },
     "routing": [
       {
@@ -133,5 +133,5 @@
       }
     ]
   },
-  "note": "Pilot-scale (202 TRAIN; TEST Crisis 13): ablation deltas are INDICATIVE, not significant. Descriptive comparisons at the a-priori design defaults (no model selected on TEST). The full battery + significance = data scale-up + >=5 seeds (Stage 5)."
+  "honest_note": "Pilot-scale (202 TRAIN; TEST Crisis 13): ablation deltas are INDICATIVE, not significant. Descriptive comparisons at the a-priori design defaults (no model selected on TEST). The full battery + significance = data scale-up + >=5 seeds (Objective 5)."
 }
