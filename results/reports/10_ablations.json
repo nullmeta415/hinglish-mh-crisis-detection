@@ -133,5 +133,5 @@
       }
     ]
   },
-  "honest_note": "Pilot-scale (202 TRAIN; TEST Crisis 13): ablation deltas are INDICATIVE, not significant. Descriptive comparisons at the a-priori design defaults (no model selected on TEST). The full battery + significance = data scale-up + >=5 seeds (Objective 5)."
+  "honest_note": "Pilot-scale (1,971 TRAIN; TEST Crisis 46): ablation deltas are INDICATIVE, not significant. Descriptive comparisons at the a-priori design defaults (no model selected on TEST). The full battery + significance = data scale-up + >=5 seeds (Objective 5)."
 }

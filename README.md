@@ -126,7 +126,7 @@ python scripts/run_pipeline.py 09_model_architecture  # or resume from any singl
 ### Try the trained model live
 
 ```bash
-`streamlit run demo/app.py`
+streamlit run demo/app.py
 ```
 
 Loads the trained checkpoint shipped in this repository (`data/stage3_model/model_state.pt`, 3 MB,
@@ -187,6 +187,15 @@ typed. The demo measures and discloses this per-prediction rather than hiding it
 - The full pseudonymized corpus is available from the authors on reasonable request for
   research use, subject to ethics approval.
 
-## 7. License
+## 7. Citation
+
+If you use this code or the released IDs and labels, please cite the paper:
+
+> *An Explainable Multi-Signal Framework for Early Detection of Mental-Health Crisis in Hindi–English
+> Code-Mixed Social Media Posts.* (Under review.)
+
+---
+
+## 8. License
 
 Released under the [MIT License](LICENSE).

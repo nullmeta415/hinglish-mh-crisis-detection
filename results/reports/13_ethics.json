@@ -118,7 +118,7 @@
   "limitations": [
     "Crisis (Tier-3) recall = 0.1087 on 46 test posts — the model CANNOT reliably detect crisis at pilot scale; it must NOT be used for crisis triage in its current form.",
     "Neutral-bias: distress posts are frequently misrouted to Neutral (false negatives) — 'Neutral' must NOT be read as 'safe/clear'; the cost of a missed distress case is asymmetric and is the priority for scale-up.",
-    "Pilot-scale training (202 TRAIN rows) — all numbers are architecture/machinery-validating, not deployable; publishable performance requires the deferred data scale-up + GPU fine-tuning.",
+    "Pilot-scale training (1,971 TRAIN rows) — all numbers are architecture/machinery-validating, not deployable; publishable performance requires the deferred data scale-up + GPU fine-tuning.",
     "No demographic labels were collected (privacy by design) — a demographic fairness audit is NOT possible and is named as future work; only platform parity is computable here.",
     "Explanations are of a pilot-scale model — trigger CONTENT sharpens at scale (Objective 4 caveat)."
   ],
