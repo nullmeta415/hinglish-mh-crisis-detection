@@ -1,0 +1,108 @@
+{
+  "part": "stage4_part4.2_global_face_validity",
+  "version": "1.0",
+  "principle": "P1 (no human); P3 (frozen TEST); P4 (rank geometry); E4.2 two-way cross-check; E4.3 expert-free clinical face-validity",
+  "retired_claim": {
+    "claim": "85% expert alignment (primary paper)",
+    "status": "RETIRED — no clinical experts are available (P1 / E4.3); the number is unsupportable.",
+    "replaced_by": [
+      "clinical-lexicon overlap %",
+      "multi-method XAI agreement (SHAP/LIME/IG)",
+      "statistical concordance with point-biserial keyword ranking"
+    ],
+    "future_work": "clinician inter-rater kappa study (named, not faked)."
+  },
+  "multi_method_xai_agreement_mean_jaccard": 0.1952,
+  "per_tier": {
+    "Neutral": {
+      "n_instances": 5,
+      "clinical_lexicon_overlap_pct": 0.0,
+      "lexicon_hits": [],
+      "pb_anchor_hits_in_topk": [],
+      "statistical_concordance_spearman": null,
+      "n_shared_pb_words": 0
+    },
+    "Stress": {
+      "n_instances": 6,
+      "clinical_lexicon_overlap_pct": 12.5,
+      "lexicon_hits": [
+        "pareshan"
+      ],
+      "pb_anchor_hits_in_topk": [
+        "pareshan"
+      ],
+      "statistical_concordance_spearman": null,
+      "n_shared_pb_words": 1
+    },
+    "Moderate": {
+      "n_instances": 10,
+      "clinical_lexicon_overlap_pct": 50.0,
+      "lexicon_hits": [
+        "akelapan",
+        "loneliness",
+        "anxiety",
+        "panic"
+      ],
+      "pb_anchor_hits_in_topk": [
+        "akelapan"
+      ],
+      "statistical_concordance_spearman": null,
+      "n_shared_pb_words": 2
+    },
+    "Crisis": {
+      "n_instances": 7,
+      "clinical_lexicon_overlap_pct": 25.0,
+      "lexicon_hits": [
+        "suicidal",
+        "suicide"
+      ],
+      "pb_anchor_hits_in_topk": [],
+      "statistical_concordance_spearman": null,
+      "n_shared_pb_words": 0
+    }
+  },
+  "global_top_triggers_overall": [
+    {
+      "word": "sad",
+      "mean_abs_shap": 0.891782,
+      "n_posts": 1
+    },
+    {
+      "word": "tired-sad",
+      "mean_abs_shap": 0.873399,
+      "n_posts": 1
+    },
+    {
+      "word": "loneliness",
+      "mean_abs_shap": 0.711697,
+      "n_posts": 1
+    },
+    {
+      "word": "pareshan",
+      "mean_abs_shap": 0.6614554,
+      "n_posts": 5
+    },
+    {
+      "word": "akelapan",
+      "mean_abs_shap": 0.5708236,
+      "n_posts": 5
+    },
+    {
+      "word": "hota",
+      "mean_abs_shap": 0.470103,
+      "n_posts": 1
+    },
+    {
+      "word": "wha",
+      "mean_abs_shap": 0.458804,
+      "n_posts": 1
+    },
+    {
+      "word": "anxiety",
+      "mean_abs_shap": 0.40540645,
+      "n_posts": 2
+    }
+  ],
+  "topk_per_tier": 8,
+  "note": "Pilot-scale: global rankings over 23 Part-4.1 instances; Crisis has 0 instances (recall 0; 13 Crisis test posts) -> reported with N, not faked. Neutral is the negative control (expected ~0% clinical overlap). The cross-check / face-validity MACHINERY is validated; trigger content and the per-tier overlap %% sharpen at the deferred data scale-up. Statistical concordance is computed only where >=3 words are shared with the small (20-anchor) point-biserial set; otherwise reported as overlap/named matches."
+}

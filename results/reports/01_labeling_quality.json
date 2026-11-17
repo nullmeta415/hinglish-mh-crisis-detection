@@ -1,0 +1,77 @@
+{
+  "part": "stage1_part1.2_automated_labeling",
+  "principle": "P1 (fully automatic)",
+  "lexicon_version": "1.0",
+  "tau": 0.9,
+  "backbone": "google/muril-base-cased",
+  "input_records": 5213,
+  "after_language_filter": 4614,
+  "dropped_offlanguage_or_empty": 599,
+  "ssl_seed_size": 2768,
+  "ssl_seed_conf_cutoff": 0.746,
+  "sdcnl_flips": 22,
+  "auto_accepted": 0,
+  "auto_accepted_pct": 0.0,
+  "inter_labeler_cohen_kappa": 0.8401,
+  "kappa_interpretation": "almost perfect",
+  "label_agreement_pct": 92.41,
+  "class_separability_silhouette": -0.0117,
+  "label_quality_fallback_triggered": false,
+  "tier_distribution_lexiconA": {
+    "0": 3132,
+    "1": 565,
+    "2": 856,
+    "3": 61
+  },
+  "tier_distribution_modelB": {
+    "0": 3264,
+    "1": 563,
+    "2": 757,
+    "3": 30
+  },
+  "tier_distribution_final": {
+    "0": 3126,
+    "1": 575,
+    "2": 851,
+    "3": 62
+  },
+  "tier_source_counts": {
+    "lexicon": 4592,
+    "corrected": 22
+  },
+  "gold_count": 0,
+  "silver_count": 4614,
+  "per_platform": {
+    "reddit": {
+      "records": 1302,
+      "gold": 0,
+      "tier_final": {
+        "0": 1189,
+        "1": 24,
+        "2": 67,
+        "3": 22
+      }
+    },
+    "twitter": {
+      "records": 1466,
+      "gold": 0,
+      "tier_final": {
+        "0": 392,
+        "1": 521,
+        "2": 529,
+        "3": 24
+      }
+    },
+    "youtube": {
+      "records": 1846,
+      "gold": 0,
+      "tier_final": {
+        "0": 1545,
+        "1": 30,
+        "2": 255,
+        "3": 16
+      }
+    }
+  },
+  "notes": "Gold = labeler agreement AND model_conf >= tau."
+}

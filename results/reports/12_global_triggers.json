@@ -1,0 +1,358 @@
+{
+  "part": "stage4_part4.2_global_triggers",
+  "version": "1.0",
+  "principle": "D5 mean-|SHAP| global ranking per Tier; grouped by true Tier; from Part-4.1 local attributions",
+  "topk": 8,
+  "per_tier": {
+    "Neutral": {
+      "n_instances": 5,
+      "n_distinct_words": 114,
+      "top": [
+        {
+          "word": "now",
+          "mean_abs_shap": 0.0992409,
+          "n_posts": 1,
+          "roman": "now"
+        },
+        {
+          "word": "near",
+          "mean_abs_shap": 0.0674377,
+          "n_posts": 1,
+          "roman": "near"
+        },
+        {
+          "word": "have",
+          "mean_abs_shap": 0.04845644,
+          "n_posts": 2,
+          "roman": "have"
+        },
+        {
+          "word": "mental",
+          "mean_abs_shap": 0.0155793,
+          "n_posts": 1,
+          "roman": "mental"
+        },
+        {
+          "word": "glad",
+          "mean_abs_shap": 0.0148701,
+          "n_posts": 1,
+          "roman": "glad"
+        },
+        {
+          "word": "that's",
+          "mean_abs_shap": 0.0119939,
+          "n_posts": 1,
+          "roman": "that's"
+        },
+        {
+          "word": "brutal",
+          "mean_abs_shap": 0.0106905,
+          "n_posts": 1,
+          "roman": "brutal"
+        },
+        {
+          "word": "been",
+          "mean_abs_shap": 0.0102516,
+          "n_posts": 1,
+          "roman": "been"
+        }
+      ]
+    },
+    "Stress": {
+      "n_instances": 6,
+      "n_distinct_words": 121,
+      "top": [
+        {
+          "word": "sad",
+          "mean_abs_shap": 0.891782,
+          "n_posts": 1,
+          "roman": "sad"
+        },
+        {
+          "word": "परेशान",
+          "mean_abs_shap": 0.6614554,
+          "n_posts": 5,
+          "roman": "pareshan"
+        },
+        {
+          "word": "hota",
+          "mean_abs_shap": 0.470103,
+          "n_posts": 1,
+          "roman": "hota"
+        },
+        {
+          "word": "bne",
+          "mean_abs_shap": 0.263736,
+          "n_posts": 1,
+          "roman": "bne"
+        },
+        {
+          "word": "kara",
+          "mean_abs_shap": 0.188152,
+          "n_posts": 1,
+          "roman": "kara"
+        },
+        {
+          "word": "gya",
+          "mean_abs_shap": 0.141995,
+          "n_posts": 1,
+          "roman": "gya"
+        },
+        {
+          "word": "clip",
+          "mean_abs_shap": 0.140495,
+          "n_posts": 1,
+          "roman": "clip"
+        },
+        {
+          "word": "chorega",
+          "mean_abs_shap": 0.118972,
+          "n_posts": 1,
+          "roman": "chorega"
+        }
+      ]
+    },
+    "Moderate": {
+      "n_instances": 10,
+      "n_distinct_words": 206,
+      "top": [
+        {
+          "word": "tired-sad",
+          "mean_abs_shap": 0.873399,
+          "n_posts": 1,
+          "roman": "tired-sad"
+        },
+        {
+          "word": "अकेलापन",
+          "mean_abs_shap": 0.7127255,
+          "n_posts": 4,
+          "roman": "akelapan"
+        },
+        {
+          "word": "loneliness",
+          "mean_abs_shap": 0.711697,
+          "n_posts": 1,
+          "roman": "loneliness"
+        },
+        {
+          "word": "toh",
+          "mean_abs_shap": 0.468649,
+          "n_posts": 1,
+          "roman": "toh"
+        },
+        {
+          "word": "wha",
+          "mean_abs_shap": 0.458804,
+          "n_posts": 1,
+          "roman": "wha"
+        },
+        {
+          "word": "anxiety",
+          "mean_abs_shap": 0.40540645,
+          "n_posts": 2,
+          "roman": "anxiety"
+        },
+        {
+          "word": "panic",
+          "mean_abs_shap": 0.334605,
+          "n_posts": 1,
+          "roman": "panic"
+        },
+        {
+          "word": "bs",
+          "mean_abs_shap": 0.298859,
+          "n_posts": 1,
+          "roman": "bs"
+        }
+      ]
+    },
+    "Crisis": {
+      "n_instances": 7,
+      "n_distinct_words": 165,
+      "top": [
+        {
+          "word": "literal",
+          "mean_abs_shap": 0.329369,
+          "n_posts": 1,
+          "roman": "literal"
+        },
+        {
+          "word": "suicidal",
+          "mean_abs_shap": 0.313998,
+          "n_posts": 1,
+          "roman": "suicidal"
+        },
+        {
+          "word": "suicide",
+          "mean_abs_shap": 0.29623175,
+          "n_posts": 4,
+          "roman": "suicide"
+        },
+        {
+          "word": "yourself",
+          "mean_abs_shap": 0.236924,
+          "n_posts": 1,
+          "roman": "yourself"
+        },
+        {
+          "word": "of",
+          "mean_abs_shap": 0.2332211,
+          "n_posts": 4,
+          "roman": "of"
+        },
+        {
+          "word": "hospitalized",
+          "mean_abs_shap": 0.233209,
+          "n_posts": 1,
+          "roman": "hospitalized"
+        },
+        {
+          "word": "study",
+          "mean_abs_shap": 0.217189,
+          "n_posts": 1,
+          "roman": "study"
+        },
+        {
+          "word": "india’s",
+          "mean_abs_shap": 0.214316,
+          "n_posts": 1,
+          "roman": "india’s"
+        }
+      ]
+    }
+  },
+  "overall_top": [
+    {
+      "word": "sad",
+      "mean_abs_shap": 0.891782,
+      "n_posts": 1
+    },
+    {
+      "word": "tired-sad",
+      "mean_abs_shap": 0.873399,
+      "n_posts": 1
+    },
+    {
+      "word": "loneliness",
+      "mean_abs_shap": 0.711697,
+      "n_posts": 1
+    },
+    {
+      "word": "pareshan",
+      "mean_abs_shap": 0.6614554,
+      "n_posts": 5
+    },
+    {
+      "word": "akelapan",
+      "mean_abs_shap": 0.5708236,
+      "n_posts": 5
+    },
+    {
+      "word": "hota",
+      "mean_abs_shap": 0.470103,
+      "n_posts": 1
+    },
+    {
+      "word": "wha",
+      "mean_abs_shap": 0.458804,
+      "n_posts": 1
+    },
+    {
+      "word": "anxiety",
+      "mean_abs_shap": 0.40540645,
+      "n_posts": 2
+    }
+  ],
+  "two_way_cross_check": {
+    "vs_point_biserial": {
+      "Stress": {
+        "n_topk": 8,
+        "n_topk_that_are_pb_anchors": 1,
+        "topk_pb_hits": [
+          "pareshan"
+        ],
+        "n_shared_words": 1,
+        "matched": [
+          {
+            "word": "pareshan",
+            "mean_abs_shap": 0.6614554,
+            "r_pb": 0.1754
+          }
+        ],
+        "spearman_shap_vs_rpb": null
+      },
+      "Moderate": {
+        "n_topk": 8,
+        "n_topk_that_are_pb_anchors": 1,
+        "topk_pb_hits": [
+          "akelapan"
+        ],
+        "n_shared_words": 2,
+        "matched": [
+          {
+            "word": "akelapan",
+            "mean_abs_shap": 0.7127255,
+            "r_pb": 0.5237
+          },
+          {
+            "word": "akelapan..what",
+            "mean_abs_shap": 0.0032289,
+            "r_pb": 0.5237
+          }
+        ],
+        "spearman_shap_vs_rpb": null
+      },
+      "Crisis": {
+        "n_topk": 8,
+        "n_topk_that_are_pb_anchors": 0,
+        "topk_pb_hits": [],
+        "n_shared_words": 0,
+        "matched": [],
+        "spearman_shap_vs_rpb": null
+      }
+    },
+    "vs_clinical_lexicon": {
+      "Neutral": {
+        "top_k": 8,
+        "in_lexicon": 0,
+        "overlap_pct": 0.0,
+        "hits": [],
+        "demoted": []
+      },
+      "Stress": {
+        "top_k": 8,
+        "in_lexicon": 1,
+        "overlap_pct": 12.5,
+        "hits": [
+          "pareshan"
+        ],
+        "demoted": []
+      },
+      "Moderate": {
+        "top_k": 8,
+        "in_lexicon": 4,
+        "overlap_pct": 50.0,
+        "hits": [
+          "akelapan",
+          "loneliness",
+          "anxiety",
+          "panic"
+        ],
+        "demoted": []
+      },
+      "Crisis": {
+        "top_k": 8,
+        "in_lexicon": 2,
+        "overlap_pct": 25.0,
+        "hits": [
+          "suicidal",
+          "suicide"
+        ],
+        "demoted": [
+          "study"
+        ]
+      }
+    }
+  },
+  "note": "Pilot-scale: global rankings over 23 Part-4.1 instances; Crisis has 0 instances (recall 0; 13 Crisis test posts) -> reported with N, not faked. Neutral is the negative control (expected ~0% clinical overlap). The cross-check / face-validity MACHINERY is validated; trigger content and the per-tier overlap %% sharpen at the deferred data scale-up. Statistical concordance is computed only where >=3 words are shared with the small (20-anchor) point-biserial set; otherwise reported as overlap/named matches."
+}

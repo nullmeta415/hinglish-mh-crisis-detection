@@ -1,0 +1,81 @@
+{
+  "part": "stage5_part5.1_significance",
+  "version": "1.0",
+  "method": "paired two-tailed t-test (df=4) + Cohen's d (paired) + Benjamini-Hochberg FDR q=0.05",
+  "family_size": 6,
+  "comparisons": [
+    {
+      "metric": "macro_f1",
+      "baseline": "majority",
+      "full_mean": 0.4648,
+      "base_mean": 0.1818,
+      "delta_mean": 0.283,
+      "t": 25.9232,
+      "p_raw": 1e-05,
+      "cohens_d": 11.5932,
+      "p_bh_fdr": 0.0,
+      "significant_q05": true
+    },
+    {
+      "metric": "macro_f1",
+      "baseline": "muril_probe",
+      "full_mean": 0.4648,
+      "base_mean": 0.2337,
+      "delta_mean": 0.2311,
+      "t": 21.1642,
+      "p_raw": 3e-05,
+      "cohens_d": 9.4649,
+      "p_bh_fdr": 0.0,
+      "significant_q05": true
+    },
+    {
+      "metric": "macro_f1",
+      "baseline": "text_only",
+      "full_mean": 0.4648,
+      "base_mean": 0.3696,
+      "delta_mean": 0.0952,
+      "t": 4.7359,
+      "p_raw": 0.00906,
+      "cohens_d": 2.118,
+      "p_bh_fdr": 0.0091,
+      "significant_q05": true
+    },
+    {
+      "metric": "mcc",
+      "baseline": "majority",
+      "full_mean": 0.4292,
+      "base_mean": 0.0,
+      "delta_mean": 0.4292,
+      "t": 27.1674,
+      "p_raw": 1e-05,
+      "cohens_d": 12.1496,
+      "p_bh_fdr": 0.0,
+      "significant_q05": true
+    },
+    {
+      "metric": "mcc",
+      "baseline": "muril_probe",
+      "full_mean": 0.4292,
+      "base_mean": 0.0074,
+      "delta_mean": 0.4219,
+      "t": 26.7022,
+      "p_raw": 1e-05,
+      "cohens_d": 11.9416,
+      "p_bh_fdr": 0.0,
+      "significant_q05": true
+    },
+    {
+      "metric": "mcc",
+      "baseline": "text_only",
+      "full_mean": 0.4292,
+      "base_mean": 0.263,
+      "delta_mean": 0.1663,
+      "t": 7.8841,
+      "p_raw": 0.0014,
+      "cohens_d": 3.5259,
+      "p_bh_fdr": 0.0017,
+      "significant_q05": true
+    }
+  ],
+  "note": "Pilot-scale, 5 seeds: low statistical power; some effects may not survive FDR correction -> reported honestly (a non-significant result is a finding, not a failure). CIs/tests bound SEED stability, not population generalization."
+}

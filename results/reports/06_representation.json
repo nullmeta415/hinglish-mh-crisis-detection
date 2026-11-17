@@ -1,0 +1,656 @@
+{
+  "part": "stage2_part2.2_representation",
+  "version": "1.0",
+  "principle": "P1; P4 (cosine, un-standardised); E2.2 pooling; E2.3 cosine; E2.4 anchor validation",
+  "model": "google/muril-base-cased",
+  "max_tokens": 128,
+  "device": "cpu",
+  "anchor_pairs_version": "1.0",
+  "n_pairs": 20,
+  "pooling_silhouette_tier_sep": {
+    "mean": 0.0428,
+    "max": -0.0487,
+    "cls": -0.0113
+  },
+  "selected_pooling": "mean",
+  "anchor_similarity_aggregate": {
+    "mean_roman_vs_en": {
+      "mean": 0.992,
+      "median": 0.9915,
+      "min": 0.9872,
+      "max": 0.9974,
+      "pct_ge_0.90": 100.0
+    },
+    "mean_deva_vs_en": {
+      "mean": 0.9948,
+      "median": 0.9944,
+      "min": 0.9896,
+      "max": 0.9993,
+      "pct_ge_0.90": 100.0
+    },
+    "cls_deva_vs_en": {
+      "mean": 0.9988,
+      "median": 0.9991,
+      "min": 0.9971,
+      "max": 0.9999,
+      "pct_ge_0.90": 100.0
+    }
+  },
+  "anchor_similarity_per_pair": [
+    {
+      "pair": "akelapan <-> loneliness",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9911,
+      "mean_deva_vs_en": 0.9913,
+      "cls_deva_vs_en": 0.9976
+    },
+    {
+      "pair": "akela <-> alone",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9914,
+      "mean_deva_vs_en": 0.9981,
+      "cls_deva_vs_en": 0.9995
+    },
+    {
+      "pair": "tanha <-> lonely",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9872,
+      "mean_deva_vs_en": 0.9921,
+      "cls_deva_vs_en": 0.9971
+    },
+    {
+      "pair": "udaas <-> sad",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9917,
+      "mean_deva_vs_en": 0.9979,
+      "cls_deva_vs_en": 0.9991
+    },
+    {
+      "pair": "rona <-> crying",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9911,
+      "mean_deva_vs_en": 0.9986,
+      "cls_deva_vs_en": 0.9995
+    },
+    {
+      "pair": "khali <-> empty",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9974,
+      "mean_deva_vs_en": 0.9967,
+      "cls_deva_vs_en": 0.9989
+    },
+    {
+      "pair": "khaalipan <-> emptiness",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9895,
+      "mean_deva_vs_en": 0.9926,
+      "cls_deva_vs_en": 0.9976
+    },
+    {
+      "pair": "dard <-> pain",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9956,
+      "mean_deva_vs_en": 0.9972,
+      "cls_deva_vs_en": 0.9991
+    },
+    {
+      "pair": "ghutan <-> suffocating",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9873,
+      "mean_deva_vs_en": 0.9896,
+      "cls_deva_vs_en": 0.9977
+    },
+    {
+      "pair": "ghabrahat <-> anxiety",
+      "tier": 2,
+      "mean_roman_vs_en": 0.9889,
+      "mean_deva_vs_en": 0.9907,
+      "cls_deva_vs_en": 0.9982
+    },
+    {
+      "pair": "pareshan <-> stressed",
+      "tier": 1,
+      "mean_roman_vs_en": 0.991,
+      "mean_deva_vs_en": 0.9993,
+      "cls_deva_vs_en": 0.9999
+    },
+    {
+      "pair": "chinta <-> worry",
+      "tier": 1,
+      "mean_roman_vs_en": 0.9973,
+      "mean_deva_vs_en": 0.9987,
+      "cls_deva_vs_en": 0.9995
+    },
+    {
+      "pair": "bechaini <-> restless",
+      "tier": 1,
+      "mean_roman_vs_en": 0.9925,
+      "mean_deva_vs_en": 0.9987,
+      "cls_deva_vs_en": 0.9996
+    },
+    {
+      "pair": "thak gaya <-> exhausted",
+      "tier": 1,
+      "mean_roman_vs_en": 0.9932,
+      "mean_deva_vs_en": 0.9948,
+      "cls_deva_vs_en": 0.9997
+    },
+    {
+      "pair": "marna <-> die",
+      "tier": 3,
+      "mean_roman_vs_en": 0.99,
+      "mean_deva_vs_en": 0.9915,
+      "cls_deva_vs_en": 0.9987
+    },
+    {
+      "pair": "marna chahta <-> want to die",
+      "tier": 3,
+      "mean_roman_vs_en": 0.9937,
+      "mean_deva_vs_en": 0.9938,
+      "cls_deva_vs_en": 0.9996
+    },
+    {
+      "pair": "jeena nahi chahta <-> do not want to live",
+      "tier": 3,
+      "mean_roman_vs_en": 0.9888,
+      "mean_deva_vs_en": 0.992,
+      "cls_deva_vs_en": 0.9999
+    },
+    {
+      "pair": "khudkushi <-> suicide",
+      "tier": 3,
+      "mean_roman_vs_en": 0.9916,
+      "mean_deva_vs_en": 0.9909,
+      "cls_deva_vs_en": 0.9971
+    },
+    {
+      "pair": "atmahatya <-> suicide",
+      "tier": 3,
+      "mean_roman_vs_en": 0.9971,
+      "mean_deva_vs_en": 0.9968,
+      "cls_deva_vs_en": 0.9986
+    },
+    {
+      "pair": "zindagi khatam <-> end my life",
+      "tier": 3,
+      "mean_roman_vs_en": 0.9937,
+      "mean_deva_vs_en": 0.994,
+      "cls_deva_vs_en": 0.9992
+    }
+  ],
+  "anisotropy_control": {
+    "matched_mean": 0.9948,
+    "mismatched_anchor_mean": 0.9928,
+    "neutral_word_mean": 0.993,
+    "margin_matched_minus_mismatched": 0.002,
+    "margin_matched_minus_neutral": 0.0018,
+    "interpretation": "absolute cosine is inflated by MuRIL anisotropy (mismatched/neutral also score high); the positive matched-minus-mismatched/neutral MARGIN + point-biserial + t-SNE are the anisotropy-robust evidence of real Hinglish<->English mapping. Fine-tuning  is the methodology's remedy to de-anisotropise and widen the margin."
+  },
+  "point_biserial_anchor_vs_tier": [
+    {
+      "anchor": "akela",
+      "tier": 2,
+      "n_present": 480,
+      "r_pb": 0.5414,
+      "p": 0.0
+    },
+    {
+      "anchor": "अकेला",
+      "tier": 2,
+      "n_present": 469,
+      "r_pb": 0.532,
+      "p": 0.0
+    },
+    {
+      "anchor": "akelapan",
+      "tier": 2,
+      "n_present": 466,
+      "r_pb": 0.5237,
+      "p": 0.0
+    },
+    {
+      "anchor": "अकेलापन",
+      "tier": 2,
+      "n_present": 454,
+      "r_pb": 0.5151,
+      "p": 0.0
+    },
+    {
+      "anchor": "marna chahta",
+      "tier": 3,
+      "n_present": 23,
+      "r_pb": 0.1923,
+      "p": 0.0
+    },
+    {
+      "anchor": "मरना चाहता",
+      "tier": 3,
+      "n_present": 23,
+      "r_pb": 0.1923,
+      "p": 0.0
+    },
+    {
+      "anchor": "परेशान",
+      "tier": 1,
+      "n_present": 505,
+      "r_pb": 0.1754,
+      "p": 0.0
+    },
+    {
+      "anchor": "pareshan",
+      "tier": 1,
+      "n_present": 496,
+      "r_pb": 0.1738,
+      "p": 0.0
+    },
+    {
+      "anchor": "jeena nahi chahta",
+      "tier": 3,
+      "n_present": 18,
+      "r_pb": 0.17,
+      "p": 0.0
+    },
+    {
+      "anchor": "जीना नहीं चाहता",
+      "tier": 3,
+      "n_present": 18,
+      "r_pb": 0.17,
+      "p": 0.0
+    },
+    {
+      "anchor": "मरना",
+      "tier": 3,
+      "n_present": 33,
+      "r_pb": 0.1527,
+      "p": 0.0
+    },
+    {
+      "anchor": "marna",
+      "tier": 3,
+      "n_present": 34,
+      "r_pb": 0.1517,
+      "p": 0.0
+    },
+    {
+      "anchor": "thak gaya",
+      "tier": 1,
+      "n_present": 13,
+      "r_pb": 0.1261,
+      "p": 0.0
+    },
+    {
+      "anchor": "थक गया",
+      "tier": 1,
+      "n_present": 13,
+      "r_pb": 0.1261,
+      "p": 0.0
+    },
+    {
+      "anchor": "tanha",
+      "tier": 2,
+      "n_present": 20,
+      "r_pb": 0.1053,
+      "p": 0.0
+    },
+    {
+      "anchor": "दर्द",
+      "tier": 2,
+      "n_present": 20,
+      "r_pb": 0.1053,
+      "p": 0.0
+    },
+    {
+      "anchor": "dard",
+      "tier": 2,
+      "n_present": 26,
+      "r_pb": 0.1039,
+      "p": 0.0
+    },
+    {
+      "anchor": "तनहा",
+      "tier": 2,
+      "n_present": 16,
+      "r_pb": 0.0941,
+      "p": 0.0
+    },
+    {
+      "anchor": "आत्महत्या",
+      "tier": 3,
+      "n_present": 3,
+      "r_pb": 0.0693,
+      "p": 2e-06
+    },
+    {
+      "anchor": "zindagi khatam",
+      "tier": 3,
+      "n_present": 3,
+      "r_pb": 0.0693,
+      "p": 2e-06
+    },
+    {
+      "anchor": "ज़िंदगी खत्म",
+      "tier": 3,
+      "n_present": 3,
+      "r_pb": 0.0693,
+      "p": 2e-06
+    },
+    {
+      "anchor": "खाली",
+      "tier": 2,
+      "n_present": 8,
+      "r_pb": 0.0665,
+      "p": 5e-06
+    },
+    {
+      "anchor": "khali",
+      "tier": 2,
+      "n_present": 10,
+      "r_pb": 0.0639,
+      "p": 1.1e-05
+    },
+    {
+      "anchor": "udaas",
+      "tier": 2,
+      "n_present": 10,
+      "r_pb": 0.0587,
+      "p": 5.3e-05
+    },
+    {
+      "anchor": "rona",
+      "tier": 2,
+      "n_present": 9,
+      "r_pb": 0.0375,
+      "p": 0.009829
+    },
+    {
+      "anchor": "रोना",
+      "tier": 2,
+      "n_present": 5,
+      "r_pb": 0.0304,
+      "p": 0.036366
+    }
+  ],
+  "tsne_coords": [
+    {
+      "label": "loneliness",
+      "lang": "en",
+      "tier": 2,
+      "x": 42.712974548339844,
+      "y": 34.807342529296875
+    },
+    {
+      "label": "akelapan",
+      "lang": "hi",
+      "tier": 2,
+      "x": 77.37271881103516,
+      "y": 43.624237060546875
+    },
+    {
+      "label": "alone",
+      "lang": "en",
+      "tier": 2,
+      "x": 44.4819450378418,
+      "y": 17.20840835571289
+    },
+    {
+      "label": "akela",
+      "lang": "hi",
+      "tier": 2,
+      "x": 26.798463821411133,
+      "y": 4.717898368835449
+    },
+    {
+      "label": "lonely",
+      "lang": "en",
+      "tier": 2,
+      "x": 1.9589585065841675,
+      "y": -30.27116584777832
+    },
+    {
+      "label": "tanha",
+      "lang": "hi",
+      "tier": 2,
+      "x": -16.55864143371582,
+      "y": -50.340606689453125
+    },
+    {
+      "label": "sad",
+      "lang": "en",
+      "tier": 2,
+      "x": -38.56983947753906,
+      "y": -29.431093215942383
+    },
+    {
+      "label": "udaas",
+      "lang": "hi",
+      "tier": 2,
+      "x": -25.820934295654297,
+      "y": -15.373595237731934
+    },
+    {
+      "label": "crying",
+      "lang": "en",
+      "tier": 2,
+      "x": -36.679378509521484,
+      "y": 5.279267311096191
+    },
+    {
+      "label": "rona",
+      "lang": "hi",
+      "tier": 2,
+      "x": -20.236480712890625,
+      "y": 4.082724094390869
+    },
+    {
+      "label": "empty",
+      "lang": "en",
+      "tier": 2,
+      "x": -7.017729759216309,
+      "y": 71.1231460571289
+    },
+    {
+      "label": "khali",
+      "lang": "hi",
+      "tier": 2,
+      "x": -30.5739688873291,
+      "y": 29.655715942382812
+    },
+    {
+      "label": "emptiness",
+      "lang": "en",
+      "tier": 2,
+      "x": -18.45215606689453,
+      "y": 86.64863586425781
+    },
+    {
+      "label": "khaalipan",
+      "lang": "hi",
+      "tier": 2,
+      "x": -85.35897827148438,
+      "y": 65.69426727294922
+    },
+    {
+      "label": "pain",
+      "lang": "en",
+      "tier": 2,
+      "x": 65.57992553710938,
+      "y": -71.4491195678711
+    },
+    {
+      "label": "dard",
+      "lang": "hi",
+      "tier": 2,
+      "x": -12.261752128601074,
+      "y": 20.92186737060547
+    },
+    {
+      "label": "suffocating",
+      "lang": "en",
+      "tier": 2,
+      "x": -66.44720458984375,
+      "y": -38.82163619995117
+    },
+    {
+      "label": "ghutan",
+      "lang": "hi",
+      "tier": 2,
+      "x": 26.05538558959961,
+      "y": -69.98485565185547
+    },
+    {
+      "label": "anxiety",
+      "lang": "en",
+      "tier": 2,
+      "x": 22.829925537109375,
+      "y": 28.302146911621094
+    },
+    {
+      "label": "ghabrahat",
+      "lang": "hi",
+      "tier": 2,
+      "x": 29.814727783203125,
+      "y": -51.38423538208008
+    },
+    {
+      "label": "stressed",
+      "lang": "en",
+      "tier": 1,
+      "x": 9.449312210083008,
+      "y": -11.485135078430176
+    },
+    {
+      "label": "pareshan",
+      "lang": "hi",
+      "tier": 1,
+      "x": -5.007534027099609,
+      "y": -1.7026939392089844
+    },
+    {
+      "label": "worry",
+      "lang": "en",
+      "tier": 1,
+      "x": -3.083916664123535,
+      "y": 43.8010139465332
+    },
+    {
+      "label": "chinta",
+      "lang": "hi",
+      "tier": 1,
+      "x": 5.925662517547607,
+      "y": 30.402063369750977
+    },
+    {
+      "label": "restless",
+      "lang": "en",
+      "tier": 1,
+      "x": 18.543766021728516,
+      "y": 50.284637451171875
+    },
+    {
+      "label": "bechaini",
+      "lang": "hi",
+      "tier": 1,
+      "x": 7.0547003746032715,
+      "y": 10.432732582092285
+    },
+    {
+      "label": "exhausted",
+      "lang": "en",
+      "tier": 1,
+      "x": -7.480607032775879,
+      "y": -16.833240509033203
+    },
+    {
+      "label": "thak gaya",
+      "lang": "hi",
+      "tier": 1,
+      "x": 39.1151008605957,
+      "y": -33.33346176147461
+    },
+    {
+      "label": "die",
+      "lang": "en",
+      "tier": 3,
+      "x": 31.804121017456055,
+      "y": 74.35476684570312
+    },
+    {
+      "label": "marna",
+      "lang": "hi",
+      "tier": 3,
+      "x": 92.26693725585938,
+      "y": -26.4967098236084
+    },
+    {
+      "label": "want to die",
+      "lang": "en",
+      "tier": 3,
+      "x": -23.936113357543945,
+      "y": -96.85195922851562
+    },
+    {
+      "label": "marna chahta",
+      "lang": "hi",
+      "tier": 3,
+      "x": 78.50659942626953,
+      "y": -28.299896240234375
+    },
+    {
+      "label": "do not want to live",
+      "lang": "en",
+      "tier": 3,
+      "x": -25.816892623901367,
+      "y": -110.13639068603516
+    },
+    {
+      "label": "jeena nahi chahta",
+      "lang": "hi",
+      "tier": 3,
+      "x": 63.5703239440918,
+      "y": -29.89131736755371
+    },
+    {
+      "label": "suicide",
+      "lang": "en",
+      "tier": 3,
+      "x": -81.05701446533203,
+      "y": 18.562707901000977
+    },
+    {
+      "label": "khudkushi",
+      "lang": "hi",
+      "tier": 3,
+      "x": -54.71403503417969,
+      "y": 60.6771240234375
+    },
+    {
+      "label": "suicide",
+      "lang": "en",
+      "tier": 3,
+      "x": -75.0188217163086,
+      "y": 29.6029052734375
+    },
+    {
+      "label": "atmahatya",
+      "lang": "hi",
+      "tier": 3,
+      "x": -47.830833435058594,
+      "y": 42.75324249267578
+    },
+    {
+      "label": "end my life",
+      "lang": "en",
+      "tier": 3,
+      "x": -38.09189224243164,
+      "y": -90.52623748779297
+    },
+    {
+      "label": "zindagi khatam",
+      "lang": "hi",
+      "tier": 3,
+      "x": -59.91328430175781,
+      "y": -8.264781951904297
+    }
+  ],
+  "note": "Absolute anchor cosine EXCEEDS 0.90 (mean-pool deva ~0.99), so the paper's literal >0.90 claim is reproduced -- BUT generic MuRIL embeddings are anisotropic, so mismatched and neutral word pairs also score ~0.99; the absolute number alone is therefore not evidence of semantic alignment. The anisotropy-robust evidence is the positive matched-minus-mismatched/neutral MARGIN + the point-biserial (akela/akelapan r~0.6) + the t-SNE structure. Domain-adaptive fine-tuning  is the methodology's remedy to de-anisotropise and widen the margin; reported as-measured (P-series honesty)."
+}

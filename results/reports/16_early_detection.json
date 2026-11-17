@@ -1,0 +1,595 @@
+{
+  "part": "stage5_part5.3_early_detection_validity",
+  "version": "1.0",
+  "principle": "P1 (system-computed); P3 (frozen Reddit+Twitter histories); P4 (cosine drift); P5 (lead-time as-measured, bounded case study); E5.2/E5.4 ERDE; E5.9 validity synthesis",
+  "erde": {
+    "config": {
+      "o_values": [
+        5,
+        50
+      ],
+      "alert_tier": 2,
+      "min_posts": 5,
+      "cost_model": "lc_o(k)=1-1/(1+exp(k-o)); c_tp=c_fn=1; c_fp=fraction_positive_users (eRisk)",
+      "cohort_n_users": 49,
+      "n_positive_users": 17,
+      "c_fp": 0.3469
+    },
+    "scores": {
+      "ERDE_5": 0.1308,
+      "ERDE_50": 0.1029
+    },
+    "decision_confusion": {
+      "TP": 13,
+      "FP": 3,
+      "FN": 4,
+      "TN": 29
+    },
+    "per_user": [
+      {
+        "user": "003cf49fba779432",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 1
+      },
+      {
+        "user": "01db8e15c07243ff",
+        "n_posts": 9,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 1,
+        "time_to_alert_days": 0.0,
+        "true_tier_max": 2
+      },
+      {
+        "user": "09d340cb85ce03c5",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 1,
+        "time_to_alert_days": 0.0,
+        "true_tier_max": 2
+      },
+      {
+        "user": "0ceef683c31f0462",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 1
+      },
+      {
+        "user": "127d04015095bc9d",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "1813b5bd78a569ce",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 4,
+        "time_to_alert_days": 0.257,
+        "true_tier_max": 3
+      },
+      {
+        "user": "19354059ddad2f06",
+        "n_posts": 10,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 1
+      },
+      {
+        "user": "1fb4602818b5ef9e",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "2626803a8305106f",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "2c7229f271811da4",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "2cbfdd13aa91c265",
+        "n_posts": 6,
+        "platform": "twitter",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "2da6a09331814526",
+        "n_posts": 8,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 3,
+        "time_to_alert_days": 31.049,
+        "true_tier_max": 2
+      },
+      {
+        "user": "2f0b75bf149d511a",
+        "n_posts": 6,
+        "platform": "twitter",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 1
+      },
+      {
+        "user": "31de70b34d8913be",
+        "n_posts": 9,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": true,
+        "alert_k": 5,
+        "time_to_alert_days": 0.037,
+        "true_tier_max": 1
+      },
+      {
+        "user": "3228f5b991d66349",
+        "n_posts": 10,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 4,
+        "time_to_alert_days": 177.874,
+        "true_tier_max": 2
+      },
+      {
+        "user": "3bdebb7f79ba4b9f",
+        "n_posts": 10,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 1,
+        "time_to_alert_days": 0.0,
+        "true_tier_max": 2
+      },
+      {
+        "user": "46756b7460361136",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "49c21bd25857a741",
+        "n_posts": 11,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 1,
+        "time_to_alert_days": 0.0,
+        "true_tier_max": 2
+      },
+      {
+        "user": "4d4891150861ce74",
+        "n_posts": 10,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "5047cc77b941a45d",
+        "n_posts": 7,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "51ac6e8805a9f7af",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 1
+      },
+      {
+        "user": "6794501d1bf61fa9",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 4,
+        "time_to_alert_days": 0.215,
+        "true_tier_max": 2
+      },
+      {
+        "user": "6ae60ef754561ddd",
+        "n_posts": 9,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "6bac32a3190a9503",
+        "n_posts": 11,
+        "platform": "reddit",
+        "truth_positive": true,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 2
+      },
+      {
+        "user": "8891d63114417a54",
+        "n_posts": 6,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 1,
+        "time_to_alert_days": 0.0,
+        "true_tier_max": 2
+      },
+      {
+        "user": "941cbaf7dae016a2",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": true,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 2
+      },
+      {
+        "user": "944a9c54d448fa05",
+        "n_posts": 9,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "96d6f08522dfee37",
+        "n_posts": 14,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "9a74185b89e65192",
+        "n_posts": 8,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": true,
+        "alert_k": 5,
+        "time_to_alert_days": 0.015,
+        "true_tier_max": 0
+      },
+      {
+        "user": "a33453c001e08daa",
+        "n_posts": 23,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "a893151735ec8c4a",
+        "n_posts": 6,
+        "platform": "twitter",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 1
+      },
+      {
+        "user": "bbba9fce27f50fc0",
+        "n_posts": 7,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 1,
+        "time_to_alert_days": 0.0,
+        "true_tier_max": 2
+      },
+      {
+        "user": "bf5ba54ee2907807",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 1,
+        "time_to_alert_days": 0.0,
+        "true_tier_max": 3
+      },
+      {
+        "user": "c7d80416ebe5d881",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "db560f39c3248495",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "db8efef225788909",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "dc2a222e7ff2f77b",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "dc4446f78cefc699",
+        "n_posts": 20,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "dd501238beca427b",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "df4b198e8e2c7946",
+        "n_posts": 13,
+        "platform": "twitter",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "e171fd7d80312ab1",
+        "n_posts": 5,
+        "platform": "twitter",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 1
+      },
+      {
+        "user": "e5fd92f1204a07ea",
+        "n_posts": 8,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": true,
+        "alert_k": 8,
+        "time_to_alert_days": 0.013,
+        "true_tier_max": 0
+      },
+      {
+        "user": "e82de89155fc7eed",
+        "n_posts": 6,
+        "platform": "reddit",
+        "truth_positive": true,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 2
+      },
+      {
+        "user": "ea687fb5c3fba278",
+        "n_posts": 5,
+        "platform": "twitter",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 1
+      },
+      {
+        "user": "f2ee1d74cdde4bf0",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "f30c6ea4ca921a2d",
+        "n_posts": 7,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 4,
+        "time_to_alert_days": 141.09,
+        "true_tier_max": 2
+      },
+      {
+        "user": "f7dfbe26629a8969",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": false,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 0
+      },
+      {
+        "user": "fa501a8971a4bd36",
+        "n_posts": 5,
+        "platform": "twitter",
+        "truth_positive": true,
+        "alerted": false,
+        "alert_k": null,
+        "time_to_alert_days": null,
+        "true_tier_max": 2
+      },
+      {
+        "user": "fb719cdfd46b8283",
+        "n_posts": 5,
+        "platform": "reddit",
+        "truth_positive": true,
+        "alerted": true,
+        "alert_k": 2,
+        "time_to_alert_days": 0.007,
+        "true_tier_max": 2
+      }
+    ],
+    "lead_time_as_measured": {
+      "n_true_positive_early_alerts": 13,
+      "median_posts_to_alert": 1.0,
+      "median_time_to_alert_days": 0.0,
+      "as_measured_note": "Lead-time reported AS-MEASURED over 13 correct early alert(s); bounded case study — NOT generalisable to the paper's asserted '2-4 weeks' until the data scale-up."
+    }
+  },
+  "drift_velocity": {
+    "source": "data/stage3_model/drift_report.json (Part 3.1, E3.6 — cosine, P4)",
+    "geometry": "cosine (primary, P4); Euclidean reported alongside",
+    "n_users": 147,
+    "n_posts": 693,
+    "drift_velocity_cosine_mean": 0.003889,
+    "drift_velocity_cosine_median": 0.003657,
+    "drift_velocity_cosine_std": 0.002167,
+    "drift_velocity_euclidean_mean": 0.05196,
+    "legacy_paper_euclidean": 13.0299,
+    "scale_caveat": "The primary paper's Euclidean Drift-Velocity 13.0299 and our cosine 0.0037 are NOT directly comparable (different embedding space, no normalisation, different metric). Cosine is scale-free and bounded, consistent with the P4 cosine geometry used throughout .",
+    "bounded_note": "Drift is a bounded case study: only ~1 user has >= 10 posts (Couto's full-matrix bar); magnitudes are provisional pending the deferred data scale-up."
+  },
+  "validity_synthesis": {
+    "dimension_1_statistical": {
+      "source": "Part 5.1 seed_metrics.json + significance.json",
+      "full_model_macro_f1_ci": null,
+      "full_model_mcc_ci": null,
+      "n_comparisons_surviving_bh_fdr": null,
+      "read": "Full model is stable across 5 seeds and beats degenerate + probe baselines under BH-FDR; pilot-scale CIs bound SEED stability, not population (stated)."
+    },
+    "dimension_2_classification": {
+      "source": "Part 5.2 validation_report.json",
+      "macro_f1_ci": {
+        "mean": 0.4648,
+        "sd": 0.0244,
+        "ci95_lo": 0.4345,
+        "ci95_hi": 0.4951,
+        "n": 5
+      },
+      "crisis_recall": {
+        "mean": 0.1,
+        "sd": 0.0451,
+        "ci95_lo": 0.044,
+        "ci95_hi": 0.156,
+        "n": 5
+      },
+      "read": "Per-tier suite ±CI; the Neutral-bias and Crisis recall ~0 are explicit (13 Crisis test posts)."
+    },
+    "dimension_3_generalization": {
+      "source": "Part 5.2 validation_report.json",
+      "in_domain_kfold_macro_f1": 0.8337,
+      "cross_platform_test_macro_f1": 0.4648,
+      "generalization_gap": 0.3689,
+      "read": "Train-YouTube/test-Reddit+Twitter domain shift quantified ('Snapshot Fallacy'): the in-domain -> cross-platform gap is the central finding."
+    },
+    "dimension_4_temporal_early_detection": {
+      "source": "Part 5.3 (this notebook)",
+      "ERDE_5": 0.1308,
+      "ERDE_50": 0.1029,
+      "decision_confusion": {
+        "TP": 13,
+        "FP": 3,
+        "FN": 4,
+        "TN": 29
+      },
+      "median_posts_to_alert": 1.0,
+      "cosine_drift_velocity_mean": 0.003889,
+      "read": "ERDE protocol runs end-to-end on the real model; bounded case study (N=49 users); lead-time as-measured (the '2-4 week' slogan is not reproduced at pilot scale)."
+    },
+    "validity_framing": {
+      "claim": "Statistical + behavioural validity for a SCREENING AID that REQUIRES human review — NOT a clinician-validated diagnostic instrument.",
+      "no_human_in_loop": "Every validation number (CIs, FDR, ablations, ERDE, drift velocity) is system-computed; the clinician kappa-study remains named future work .",
+      "deployment_distinction": "P1 (no human in the METHODOLOGY loop) is not a claim of autonomous DEPLOYMENT: a deployed screening aid still requires human review (Part 4.3).",
+      "scope": "The validation PROTOCOL (reproducible, CI-bounded, FDR-corrected, multi-dimensional, with measured early-detection) is the contribution; magnitudes are pilot-scale and provisional pending the deferred data scale-up."
+    }
+  },
+  "note": "Early detection is a BOUNDED CASE STUDY: drift subset has 37 users/151 posts but only ~1 user >=10 posts and 49 users >=5 posts. The Neutral-bias + Crisis recall ~0 carry through, so the model fires few/no Tier->=2 alerts -> ERDE is dominated by FN cost and a lead-time is largely unmeasurable at this scale. This is reported honestly: the end-to-end ERDE PROTOCOL on the real model is the contribution; meaningful lead-times need more long user histories from the deferred data scale-up."
+}

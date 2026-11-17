@@ -1,0 +1,475 @@
+{
+  "part": "stage5_part5.2_classification_generalization_ablation",
+  "version": "1.0",
+  "principle": "P1; P3 (train-YT/test-Reddit+Twitter = cross-platform generalization); P6 (ablation+efficiency); E5.5 classification suite; E5.3 generalization; E5.6 ablation battery; E5.7 efficiency",
+  "seeds": [
+    42,
+    2023,
+    2024,
+    0,
+    7
+  ],
+  "classification_suite_ci": {
+    "overall_ci": {
+      "accuracy": {
+        "mean": 0.6875,
+        "sd": 0.0187,
+        "ci95_lo": 0.6643,
+        "ci95_hi": 0.7107,
+        "n": 5
+      },
+      "macro_f1": {
+        "mean": 0.4648,
+        "sd": 0.0244,
+        "ci95_lo": 0.4345,
+        "ci95_hi": 0.4951,
+        "n": 5
+      },
+      "mcc": {
+        "mean": 0.4292,
+        "sd": 0.0353,
+        "ci95_lo": 0.3854,
+        "ci95_hi": 0.4731,
+        "n": 5
+      },
+      "roc_auc": {
+        "mean": 0.8271,
+        "sd": 0.0083,
+        "ci95_lo": 0.8168,
+        "ci95_hi": 0.8374,
+        "n": 5
+      }
+    },
+    "per_tier_ci": {
+      "Neutral": {
+        "P": {
+          "mean": 0.6904,
+          "sd": 0.0164,
+          "ci95_lo": 0.6701,
+          "ci95_hi": 0.7107,
+          "n": 5
+        },
+        "R": {
+          "mean": 0.937,
+          "sd": 0.0154,
+          "ci95_lo": 0.9179,
+          "ci95_hi": 0.9561,
+          "n": 5
+        },
+        "F1": {
+          "mean": 0.7948,
+          "sd": 0.0095,
+          "ci95_lo": 0.783,
+          "ci95_hi": 0.8066,
+          "n": 5
+        }
+      },
+      "Stress": {
+        "P": {
+          "mean": 0.8048,
+          "sd": 0.0783,
+          "ci95_lo": 0.7077,
+          "ci95_hi": 0.902,
+          "n": 5
+        },
+        "R": {
+          "mean": 0.3585,
+          "sd": 0.1029,
+          "ci95_lo": 0.2308,
+          "ci95_hi": 0.4862,
+          "n": 5
+        },
+        "F1": {
+          "mean": 0.4853,
+          "sd": 0.09,
+          "ci95_lo": 0.3736,
+          "ci95_hi": 0.597,
+          "n": 5
+        }
+      },
+      "Moderate": {
+        "P": {
+          "mean": 0.6854,
+          "sd": 0.0332,
+          "ci95_lo": 0.6441,
+          "ci95_hi": 0.7267,
+          "n": 5
+        },
+        "R": {
+          "mean": 0.3718,
+          "sd": 0.0907,
+          "ci95_lo": 0.2592,
+          "ci95_hi": 0.4844,
+          "n": 5
+        },
+        "F1": {
+          "mean": 0.4747,
+          "sd": 0.0835,
+          "ci95_lo": 0.371,
+          "ci95_hi": 0.5784,
+          "n": 5
+        }
+      },
+      "Crisis": {
+        "P": {
+          "mean": 0.1472,
+          "sd": 0.0609,
+          "ci95_lo": 0.0716,
+          "ci95_hi": 0.2229,
+          "n": 5
+        },
+        "R": {
+          "mean": 0.1,
+          "sd": 0.0451,
+          "ci95_lo": 0.044,
+          "ci95_hi": 0.156,
+          "n": 5
+        },
+        "F1": {
+          "mean": 0.1042,
+          "sd": 0.0231,
+          "ci95_lo": 0.0756,
+          "ci95_hi": 0.1329,
+          "n": 5
+        }
+      }
+    },
+    "mean_confusion_matrix": [
+      [
+        1481.4,
+        35.8,
+        55.6,
+        8.2
+      ],
+      [
+        314.2,
+        195.4,
+        33.0,
+        2.4
+      ],
+      [
+        330.6,
+        12.2,
+        221.6,
+        31.6
+      ],
+      [
+        20.8,
+        5.0,
+        15.6,
+        4.6
+      ]
+    ]
+  },
+  "cross_platform_generalization": {
+    "setup": "train on YouTube (in-domain), test on frozen Reddit+Twitter (cross-platform) — P3 / E5.3",
+    "in_domain_kfold_macro_f1": 0.8337,
+    "cross_platform_test_macro_f1": 0.4648,
+    "generalization_gap_macro_f1": 0.3689,
+    "per_platform_ci": {
+      "reddit": {
+        "accuracy": {
+          "mean": 0.8978,
+          "sd": 0.0184,
+          "ci95_lo": 0.875,
+          "ci95_hi": 0.9207,
+          "n": 5
+        },
+        "macro_f1": {
+          "mean": 0.4416,
+          "sd": 0.0249,
+          "ci95_lo": 0.4107,
+          "ci95_hi": 0.4724,
+          "n": 5
+        },
+        "mcc": {
+          "mean": 0.4006,
+          "sd": 0.0317,
+          "ci95_lo": 0.3612,
+          "ci95_hi": 0.44,
+          "n": 5
+        }
+      },
+      "twitter": {
+        "accuracy": {
+          "mean": 0.5007,
+          "sd": 0.0267,
+          "ci95_lo": 0.4675,
+          "ci95_hi": 0.5338,
+          "n": 5
+        },
+        "macro_f1": {
+          "mean": 0.3891,
+          "sd": 0.018,
+          "ci95_lo": 0.3668,
+          "ci95_hi": 0.4115,
+          "n": 5
+        },
+        "mcc": {
+          "mean": 0.3609,
+          "sd": 0.0298,
+          "ci95_lo": 0.324,
+          "ci95_hi": 0.3979,
+          "n": 5
+        }
+      }
+    },
+    "platform_class_prior": {
+      "reddit": {
+        "Neutral": 1189,
+        "Stress": 24,
+        "Moderate": 67,
+        "Crisis": 22
+      },
+      "twitter": {
+        "Neutral": 392,
+        "Stress": 521,
+        "Moderate": 529,
+        "Crisis": 24
+      }
+    },
+    "confound_note": "Reddit ~90% Neutral vs Twitter balanced -> raw per-platform gaps partly reflect composition (established in Part 4.3); the in-domain->cross-platform gap is the headline generalization finding."
+  },
+  "ablation_battery": {
+    "architecture_3.3": {
+      "source": "data/stage3_model/ablation_report.json (Part 3.3, E3.2-E3.5)",
+      "baseline": {
+        "config": {
+          "routing": "static",
+          "gate": "elu",
+          "fusion": "attention",
+          "loss": "focal_contrastive"
+        },
+        "accuracy": 0.6824,
+        "macro_f1": 0.4391,
+        "mcc": 0.4137,
+        "tier3_recall": 0.0435,
+        "roc_auc": 0.8197,
+        "n_params": 805572,
+        "train_secs": 87.8,
+        "epoch_ms": 2194.3,
+        "infer_ms_per_sample": 0.067
+      },
+      "routing": [
+        {
+          "value": "static (baseline)",
+          "macro_f1": 0.4391,
+          "mcc": 0.4137,
+          "tier3_recall": 0.0435,
+          "roc_auc": 0.8197,
+          "d_macro_f1_vs_baseline": 0.0
+        },
+        {
+          "value": "dynamic",
+          "macro_f1": 0.4779,
+          "mcc": 0.4632,
+          "tier3_recall": 0.0217,
+          "roc_auc": 0.8442,
+          "d_macro_f1_vs_baseline": 0.0388
+        }
+      ],
+      "gate": [
+        {
+          "value": "elu (baseline)",
+          "macro_f1": 0.4391,
+          "mcc": 0.4137,
+          "tier3_recall": 0.0435,
+          "roc_auc": 0.8197,
+          "d_macro_f1_vs_baseline": 0.0
+        },
+        {
+          "value": "none",
+          "macro_f1": 0.5399,
+          "mcc": 0.5172,
+          "tier3_recall": 0.1087,
+          "roc_auc": 0.844,
+          "d_macro_f1_vs_baseline": 0.1008
+        },
+        {
+          "value": "sigmoid",
+          "macro_f1": 0.383,
+          "mcc": 0.3494,
+          "tier3_recall": 0.0217,
+          "roc_auc": 0.8164,
+          "d_macro_f1_vs_baseline": -0.0561
+        }
+      ],
+      "fusion": [
+        {
+          "value": "attention (baseline)",
+          "macro_f1": 0.4391,
+          "mcc": 0.4137,
+          "tier3_recall": 0.0435,
+          "roc_auc": 0.8197,
+          "d_macro_f1_vs_baseline": 0.0
+        },
+        {
+          "value": "concat",
+          "macro_f1": 0.5063,
+          "mcc": 0.5021,
+          "tier3_recall": 0.0435,
+          "roc_auc": 0.8629,
+          "d_macro_f1_vs_baseline": 0.0672
+        },
+        {
+          "value": "text_only",
+          "macro_f1": 0.3507,
+          "mcc": 0.1799,
+          "tier3_recall": 0.087,
+          "roc_auc": 0.7035,
+          "d_macro_f1_vs_baseline": -0.0884
+        }
+      ],
+      "loss": [
+        {
+          "value": "focal_contrastive (baseline)",
+          "macro_f1": 0.4391,
+          "mcc": 0.4137,
+          "tier3_recall": 0.0435,
+          "roc_auc": 0.8197,
+          "d_macro_f1_vs_baseline": 0.0
+        },
+        {
+          "value": "focal",
+          "macro_f1": 0.5224,
+          "mcc": 0.5048,
+          "tier3_recall": 0.0435,
+          "roc_auc": 0.8322,
+          "d_macro_f1_vs_baseline": 0.0833
+        },
+        {
+          "value": "ce",
+          "macro_f1": 0.5335,
+          "mcc": 0.5167,
+          "tier3_recall": 0.1087,
+          "roc_auc": 0.84,
+          "d_macro_f1_vs_baseline": 0.0944
+        }
+      ]
+    },
+    "backbone_2.3_E2.7": {
+      "source": "backbone_benchmark{,_finetuned}.json (Part 2.3)",
+      "frozen_probe@128": [
+        {
+          "backbone": "muril",
+          "macro_f1": 0.3322,
+          "mcc": 0.2347,
+          "tier3_recall": 0.0652
+        },
+        {
+          "backbone": "xlmr",
+          "macro_f1": 0.2976,
+          "mcc": 0.1453,
+          "tier3_recall": 0.0652
+        }
+      ],
+      "finetuned@128": [
+        {
+          "backbone": "muril",
+          "macro_f1": 0.5432,
+          "mcc": 0.5186,
+          "tier3_recall": 0.8043
+        },
+        {
+          "backbone": "xlmr",
+          "macro_f1": 0.2799,
+          "mcc": 0.1888,
+          "tier3_recall": 0.3478
+        },
+        {
+          "backbone": "indicbertv2",
+          "macro_f1": 0.2929,
+          "mcc": 0.2251,
+          "tier3_recall": 0.0
+        }
+      ],
+      "note": "gated indic-bert=403 -> ungated IndicBERTv2 substituted; IndicBERTv2 best FT (MCC +0.160)."
+    },
+    "token_cap_2.3_E2.8": {
+      "source": "token_sensitivity.json (Part 2.3)",
+      "by_backbone": {
+        "muril": {
+          "f1_128": 0.3322,
+          "f1_256": 0.3453,
+          "delta_256_minus_128": 0.0131
+        },
+        "xlmr": {
+          "f1_128": 0.2976,
+          "f1_256": 0.3015,
+          "delta_256_minus_128": 0.0039
+        }
+      }
+    },
+    "augmentation_5.2_E1.3": {
+      "source": "computed here (cached-embedding subset, seed 42)",
+      "rows": [
+        {
+          "variant": "original_only",
+          "n_train": 1846,
+          "train_tier_dist": {
+            "Neutral": 1545,
+            "Stress": 30,
+            "Moderate": 255,
+            "Crisis": 16
+          },
+          "macro_f1": 0.5507,
+          "mcc": 0.5319,
+          "tier3_recall": 0.1087,
+          "d_macro_f1_vs_full": 0.0591
+        },
+        {
+          "variant": "+CSS",
+          "n_train": 1897,
+          "train_tier_dist": {
+            "Neutral": 1545,
+            "Stress": 67,
+            "Moderate": 255,
+            "Crisis": 30
+          },
+          "macro_f1": 0.4866,
+          "mcc": 0.4683,
+          "tier3_recall": 0.087,
+          "d_macro_f1_vs_full": -0.005
+        },
+        {
+          "variant": "+EDA",
+          "n_train": 1930,
+          "train_tier_dist": {
+            "Neutral": 1545,
+            "Stress": 82,
+            "Moderate": 255,
+            "Crisis": 48
+          },
+          "macro_f1": 0.4441,
+          "mcc": 0.4284,
+          "tier3_recall": 0.0652,
+          "d_macro_f1_vs_full": -0.0475
+        },
+        {
+          "variant": "+generation (full)",
+          "n_train": 1971,
+          "train_tier_dist": {
+            "Neutral": 1545,
+            "Stress": 82,
+            "Moderate": 255,
+            "Crisis": 89
+          },
+          "macro_f1": 0.4916,
+          "mcc": 0.4572,
+          "tier3_recall": 0.1087,
+          "d_macro_f1_vs_full": 0.0
+        }
+      ]
+    }
+  },
+  "efficiency": {
+    "source": "data/stage3_model/efficiency.json (Part 3.3, E5.7)",
+    "trainable_params_head": 805572,
+    "train_seconds_total": 87.8,
+    "epoch_ms": 2194.3,
+    "infer_ms_per_sample": 0.067,
+    "note_backbones": "MuRIL + MilaNLProc/xlm-emo-t are FROZEN ; their params are not trained and are embedded once (cached). Trainable count is the fusion head only."
+  },
+  "benchmarking_caveat": "Cross-study F1/accuracy values are NOT directly comparable across papers — different datasets, label schemes, splits, and protocols (Bhatt 2026; Garg 2023). We compare only within this project's fixed frozen-TEST protocol.",
+  "note": "Pilot-scale: classification CIs bound SEED stability; the in-domain(0.834)->cross-platform(0.465) gap is the headline generalization finding; Crisis recall ~0 carries through (13 test posts). Ablation rows REUSE prior reports (cited) except the augmentation rows, computed here."
+}

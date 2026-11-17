@@ -1,0 +1,100 @@
+{
+  "part": "stage1_part1.3_augmentation",
+  "principle": "P1 (fully automatic); P3 (train=youtube, test=reddit+twitter FROZEN); P7 (tiers 0-3)",
+  "aug_version": "1.0",
+  "lexicon_version": "1.0",
+  "crisis_seed_version": "1.0",
+  "toggles": {
+    "css": true,
+    "eda": true,
+    "generation": true
+  },
+  "generator": "offline lexicon-guided code-mix templating (deterministic, seeded); neural Gupta-2020 transfer = documented scale-up path",
+  "balance": {
+    "target_floor": 142,
+    "min_floor": 20,
+    "synth_cap": 0.7,
+    "note": "Tier-3 cap relaxed (crisis starts at 1 real); realized share reported per tier"
+  },
+  "dedup_cosine_threshold": 0.95,
+  "input_records": 4614,
+  "train_rows_real": 1846,
+  "test_rows_frozen": 2768,
+  "synthetic_rows": 125,
+  "train_tier_before": {
+    "0": 1545,
+    "1": 30,
+    "2": 255,
+    "3": 16
+  },
+  "train_tier_after": {
+    "0": 1545,
+    "1": 82,
+    "2": 255,
+    "3": 89
+  },
+  "per_tier_need": {
+    "1": 69,
+    "2": 0,
+    "3": 126
+  },
+  "per_tier_share_after": {
+    "0": {
+      "total": 1545,
+      "real": 1545,
+      "synthetic": 0,
+      "synthetic_share_pct": 0.0
+    },
+    "1": {
+      "total": 82,
+      "real": 30,
+      "synthetic": 52,
+      "synthetic_share_pct": 63.4
+    },
+    "2": {
+      "total": 255,
+      "real": 255,
+      "synthetic": 0,
+      "synthetic_share_pct": 0.0
+    },
+    "3": {
+      "total": 89,
+      "real": 16,
+      "synthetic": 73,
+      "synthetic_share_pct": 82.0
+    }
+  },
+  "method_counts": {
+    "css": 51,
+    "generation": 41,
+    "eda_delete": 29,
+    "eda_synonym": 4
+  },
+  "candidates_post_gate_pre_dedup": {
+    "1": 158,
+    "2": 1398,
+    "3": 174
+  },
+  "dedup_drops": {
+    "1": 106,
+    "2": 0,
+    "3": 101
+  },
+  "quality_drops": {
+    "tier_preserve": 54,
+    "language": 17
+  },
+  "leakage_check_test_has_zero_synthetic": true,
+  "generated_tier3_sample": [
+    "Ab jeena nahi chahta",
+    "Sach me ab himmat nahi bachi marna chahta hoon thak gaya hoon",
+    "Ab to main ab nahi jeena chahta bahut akela hoon",
+    "Yaar zindagi khatam karni hai kuch acha nahi lagta",
+    "Har din ab jeena nahi chahta koi farak nahi padta",
+    "Bas ab ab nahi jeena marna chahta hoon ab aur nahi",
+    "Pata nahi kyun mere bina sab behtar honge ab nahi jeena",
+    "Ladte ladte haar gaya marna chahta hoon thak gaya hoon",
+    "Sach me dard itna hai ki ab jeena nahi chahta bahut akela hoon",
+    "Ab to mujhe marna chahta hoon kuch acha nahi lagta"
+  ]
+}

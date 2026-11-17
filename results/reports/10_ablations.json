@@ -1,0 +1,137 @@
+{
+  "part": "stage3_part3.3_ablations",
+  "version": "1.0",
+  "principle": "P1; P3 (no selection on TEST); P6 (component + efficiency justification); E3.2/3.3/3.4/3.5",
+  "epochs": 40,
+  "baseline_config": {
+    "prim_caps": 32,
+    "prim_dim": 16,
+    "class_dim": 16,
+    "fusion_dim": 128,
+    "routing": "static",
+    "gate": "elu",
+    "fusion": "attention",
+    "loss": "focal_contrastive",
+    "lr": 0.001,
+    "dropout": 0.3,
+    "contrast_w": 0.2,
+    "weight_decay": 0.0001,
+    "focal_gamma": 2.0
+  },
+  "ablations": {
+    "baseline": {
+      "config": {
+        "routing": "static",
+        "gate": "elu",
+        "fusion": "attention",
+        "loss": "focal_contrastive"
+      },
+      "accuracy": 0.6824,
+      "macro_f1": 0.4391,
+      "mcc": 0.4137,
+      "tier3_recall": 0.0435,
+      "roc_auc": 0.8197,
+      "n_params": 805572,
+      "train_secs": 87.8,
+      "epoch_ms": 2194.3,
+      "infer_ms_per_sample": 0.067
+    },
+    "routing": [
+      {
+        "value": "static (baseline)",
+        "macro_f1": 0.4391,
+        "mcc": 0.4137,
+        "tier3_recall": 0.0435,
+        "roc_auc": 0.8197,
+        "d_macro_f1_vs_baseline": 0.0
+      },
+      {
+        "value": "dynamic",
+        "macro_f1": 0.4779,
+        "mcc": 0.4632,
+        "tier3_recall": 0.0217,
+        "roc_auc": 0.8442,
+        "d_macro_f1_vs_baseline": 0.0388
+      }
+    ],
+    "gate": [
+      {
+        "value": "elu (baseline)",
+        "macro_f1": 0.4391,
+        "mcc": 0.4137,
+        "tier3_recall": 0.0435,
+        "roc_auc": 0.8197,
+        "d_macro_f1_vs_baseline": 0.0
+      },
+      {
+        "value": "none",
+        "macro_f1": 0.5399,
+        "mcc": 0.5172,
+        "tier3_recall": 0.1087,
+        "roc_auc": 0.844,
+        "d_macro_f1_vs_baseline": 0.1008
+      },
+      {
+        "value": "sigmoid",
+        "macro_f1": 0.383,
+        "mcc": 0.3494,
+        "tier3_recall": 0.0217,
+        "roc_auc": 0.8164,
+        "d_macro_f1_vs_baseline": -0.0561
+      }
+    ],
+    "fusion": [
+      {
+        "value": "attention (baseline)",
+        "macro_f1": 0.4391,
+        "mcc": 0.4137,
+        "tier3_recall": 0.0435,
+        "roc_auc": 0.8197,
+        "d_macro_f1_vs_baseline": 0.0
+      },
+      {
+        "value": "concat",
+        "macro_f1": 0.5063,
+        "mcc": 0.5021,
+        "tier3_recall": 0.0435,
+        "roc_auc": 0.8629,
+        "d_macro_f1_vs_baseline": 0.0672
+      },
+      {
+        "value": "text_only",
+        "macro_f1": 0.3507,
+        "mcc": 0.1799,
+        "tier3_recall": 0.087,
+        "roc_auc": 0.7035,
+        "d_macro_f1_vs_baseline": -0.0884
+      }
+    ],
+    "loss": [
+      {
+        "value": "focal_contrastive (baseline)",
+        "macro_f1": 0.4391,
+        "mcc": 0.4137,
+        "tier3_recall": 0.0435,
+        "roc_auc": 0.8197,
+        "d_macro_f1_vs_baseline": 0.0
+      },
+      {
+        "value": "focal",
+        "macro_f1": 0.5224,
+        "mcc": 0.5048,
+        "tier3_recall": 0.0435,
+        "roc_auc": 0.8322,
+        "d_macro_f1_vs_baseline": 0.0833
+      },
+      {
+        "value": "ce",
+        "macro_f1": 0.5335,
+        "mcc": 0.5167,
+        "tier3_recall": 0.1087,
+        "roc_auc": 0.84,
+        "d_macro_f1_vs_baseline": 0.0944
+      }
+    ]
+  },
+  "note": "Pilot-scale (202 TRAIN; TEST Crisis 13): ablation deltas are INDICATIVE, not significant. Descriptive comparisons at the a-priori design defaults (no model selected on TEST). The full battery + significance = data scale-up + >=5 seeds (Stage 5)."
+}

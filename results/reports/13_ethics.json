@@ -1,0 +1,126 @@
+{
+  "part": "stage4_part4.3_ethics_accountability",
+  "version": "1.0",
+  "principle": "P1 (automated methodology); P3 (frozen TEST); E4.6 ethics/accountability/disclaimer",
+  "screening_aid_disclaimer": "SCREENING AID, NOT A DIAGNOSTIC TOOL. This system produces tier-level risk SIGNALS to help prioritise human attention across large volumes of multilingual social-media text. Its outputs are NOT clinical diagnoses and carry no clinical authority. Every flagged case REQUIRES review by a qualified human before any action is taken. The system MUST NOT be used for autonomous decisions affecting individuals.",
+  "intended_use": [
+    "Research into cross-platform, multilingual (Hinglish) mental-health signal detection.",
+    "Prioritisation/triage SUPPORT that routes posts to human reviewers — never a substitute for them."
+  ],
+  "out_of_scope_and_misuse": [
+    "Clinical diagnosis or any individual clinical labelling.",
+    "Automated or involuntary intervention, or any high-stakes decision without human review.",
+    "Surveillance, individual targeting, or attempts to de-anonymise users.",
+    "Crisis triage in the current pilot-scale form (Tier-3 recall is 0)."
+  ],
+  "human_oversight_vs_P1": "P1 ('fully automatic') governs the RESEARCH METHODOLOGY — labelling is automated weak/distant supervision because no clinical experts were available . It does NOT license unsupervised DEPLOYMENT: a deployed system requires mandatory human review (the disclaimer). The two are complementary — automated to BUILD the evidence, human-overseen to ACT on it.",
+  "privacy_posture": {
+    "user_ids": "Salted SHA-256 anonymised IDs only; raw usernames are NEVER persisted.",
+    "salt": "A stable secret salt (kept out of all artefacts/logs) so IDs are consistent yet non-reversible.",
+    "anon_ids_present": true,
+    "raw_username_leak": false,
+    "demographics": "No demographic attributes are collected -> no demographic fairness audit is possible (named limitation, not faked)."
+  },
+  "fairness_probe": {
+    "per_platform_parity": {
+      "reddit": {
+        "n": 1302,
+        "class_prior": {
+          "Neutral": 1189,
+          "Stress": 24,
+          "Moderate": 67,
+          "Crisis": 22
+        },
+        "accuracy": 0.9094,
+        "macro_f1": 0.4674,
+        "mcc": 0.4302,
+        "per_tier_recall": {
+          "Neutral": 0.9588,
+          "Stress": 0.125,
+          "Moderate": 0.5522,
+          "Crisis": 0.1818
+        }
+      },
+      "twitter": {
+        "n": 1466,
+        "class_prior": {
+          "Neutral": 392,
+          "Stress": 521,
+          "Moderate": 529,
+          "Crisis": 24
+        },
+        "accuracy": 0.5184,
+        "macro_f1": 0.4059,
+        "mcc": 0.3763,
+        "per_tier_recall": {
+          "Neutral": 0.8954,
+          "Stress": 0.3916,
+          "Moderate": 0.3856,
+          "Crisis": 0.0417
+        }
+      }
+    },
+    "summary": {
+      "platforms": [
+        "reddit",
+        "twitter"
+      ],
+      "macro_f1_gap": 0.0615,
+      "accuracy_gap": 0.391,
+      "per_tier_recall_gap": {
+        "Neutral": 0.0634,
+        "Stress": 0.2666,
+        "Moderate": 0.1666,
+        "Crisis": 0.1401
+      },
+      "class_prior_differs": true,
+      "confound_note": "Reddit and Twitter have markedly different class priors (Reddit ~90% Neutral; Twitter balanced across Neutral/Stress/Moderate), so raw macro-F1/accuracy gaps partly reflect dataset composition, NOT solely model bias. The per-Tier recall view (controlling for tier) is the fairer parity lens; it is reported only where true-class support >= 5."
+    }
+  },
+  "per_tier_limitations": {
+    "Neutral": {
+      "support": 1581,
+      "recall": 0.9431,
+      "misrouted_to": {
+        "Stress": 20,
+        "Moderate": 63,
+        "Crisis": 7
+      }
+    },
+    "Stress": {
+      "support": 545,
+      "recall": 0.3798,
+      "misrouted_to": {
+        "Neutral": 294,
+        "Moderate": 40,
+        "Crisis": 4
+      }
+    },
+    "Moderate": {
+      "support": 596,
+      "recall": 0.4044,
+      "misrouted_to": {
+        "Neutral": 333,
+        "Stress": 9,
+        "Crisis": 13
+      }
+    },
+    "Crisis": {
+      "support": 46,
+      "recall": 0.1087,
+      "misrouted_to": {
+        "Neutral": 20,
+        "Stress": 4,
+        "Moderate": 17
+      }
+    }
+  },
+  "limitations": [
+    "Crisis (Tier-3) recall = 0.1087 on 46 test posts — the model CANNOT reliably detect crisis at pilot scale; it must NOT be used for crisis triage in its current form.",
+    "Neutral-bias: distress posts are frequently misrouted to Neutral (false negatives) — 'Neutral' must NOT be read as 'safe/clear'; the cost of a missed distress case is asymmetric and is the priority for scale-up.",
+    "Pilot-scale training (202 TRAIN rows) — all numbers are architecture/machinery-validating, not deployable; publishable performance requires the deferred data scale-up + GPU fine-tuning.",
+    "No demographic labels were collected (privacy by design) — a demographic fairness audit is NOT possible and is named as future work; only platform parity is computable here.",
+    "Explanations are of a pilot-scale model — trigger CONTENT sharpens at scale (Stage-4 caveat)."
+  ],
+  "accountability": "Outputs are explainable (Part 4.1 multi-method attributions; Part 4.2 expert-free clinical face-validity) and auditable (versioned lexicon/anchor/translit tables; seeded, reproducible runs). The unsupportable '85% expert-alignment' claim has been RETIRED (Part 4.2); a clinician kappa-study is named future work."
+}

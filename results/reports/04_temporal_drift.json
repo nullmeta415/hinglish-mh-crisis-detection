@@ -1,0 +1,129 @@
+{
+  "part": "stage1_part1.4_temporal_drift",
+  "version": "1.0",
+  "principle": "P1 (no human); P2 (temporal auxiliary); P3 (train=youtube, test=reddit+twitter); P5 (drift only where data supports it); E3.1 tiered temporal",
+  "decisions": {
+    "D1_drift_min_posts": 3,
+    "D2_max_chunks": 10,
+    "D3_minmax_refit": "TRAIN real rows only",
+    "D4_platforms": [
+      "reddit",
+      "twitter"
+    ],
+    "D5_ruminative_repetition": "deferred to Stage-2 preprocessing",
+    "D6_keep_same_day_bursts": true
+  },
+  "temporal_features": [
+    "month",
+    "day",
+    "hour",
+    "weekday",
+    "is_working_hour",
+    "is_weekend"
+  ],
+  "scaler_ranges_train_fit": {
+    "month": [
+      1.0,
+      12.0
+    ],
+    "day": [
+      1.0,
+      31.0
+    ],
+    "hour": [
+      0.0,
+      23.0
+    ],
+    "weekday": [
+      0.0,
+      6.0
+    ],
+    "is_working_hour": [
+      0.0,
+      1.0
+    ],
+    "is_weekend": [
+      0.0,
+      1.0
+    ]
+  },
+  "n_train_rows": 1971,
+  "n_test_rows": 2768,
+  "train_real": 1846,
+  "train_synthetic": 125,
+  "temporal_mask": {
+    "train_masked_in": 1846,
+    "train_masked_out": 125,
+    "test_masked_in": 2768,
+    "test_masked_out": 0,
+    "synthetic_all_masked_out": true
+  },
+  "posting_hour_histogram_real": {
+    "0": 94,
+    "1": 111,
+    "2": 116,
+    "3": 180,
+    "4": 209,
+    "5": 255,
+    "6": 265,
+    "7": 288,
+    "8": 281,
+    "9": 320,
+    "10": 313,
+    "11": 450,
+    "12": 139,
+    "13": 170,
+    "14": 194,
+    "15": 189,
+    "16": 234,
+    "17": 215,
+    "18": 163,
+    "19": 128,
+    "20": 71,
+    "21": 74,
+    "22": 67,
+    "23": 88
+  },
+  "drift": {
+    "source": "frozen reddit+twitter test, real rows only",
+    "leakage_check_zero_youtube_zero_synthetic": true,
+    "unique_users_total": 2006,
+    "users_by_threshold_all": {
+      ">=2": 363,
+      ">=3": 147,
+      ">=5": 49,
+      ">=10": 10
+    },
+    "users_by_threshold_reddit": {
+      ">=2": 212,
+      ">=3": 101,
+      ">=5": 34,
+      ">=10": 6
+    },
+    "users_by_threshold_twitter": {
+      ">=2": 151,
+      ">=3": 46,
+      ">=5": 15,
+      ">=10": 4
+    },
+    "viability_floor_posts": 3,
+    "viable_users_kept": 147,
+    "drift_subset_posts": 693,
+    "max_posts_per_user": 23,
+    "full_couto_min_posts": 10,
+    "full_couto_viable_users": 10,
+    "verdict": "full",
+    "span_summary": {
+      "median_span_days": 0.0,
+      "max_span_days": 562,
+      "users_span_0_days_same_session": 106,
+      "users_span_ge_7_days": 38
+    },
+    "drift_subset_tier_dist": {
+      "0": 530,
+      "1": 54,
+      "2": 99,
+      "3": 10
+    }
+  }
+}
