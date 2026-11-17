@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "name": "Fixed Hinglish <-> English clinical anchor pairs for the >0.90 semantic-similarity validation (E2.4)",
+  "provenance": "Curated from lexicon_mh_v1.json anchor terms + the primary paper's own examples (rona->crying, akelapan->loneliness). Each pair gives the romanized Hinglish form, its Devanagari transliteration (translit_map_hi_v1.json), the English clinical equivalent, and the Tier. Used by Stage 2 Part 2.2 to convert the paper's asserted '>0.90 similarity' into a measured, reproducible cosine result with a t-SNE figure and point-biserial ranking. Versioned so it can be audited and cited.",
+  "notes": "The validation embeds each side with MuRIL (mean-pool primary, [CLS] = the paper's baseline) and reports cosine on UN-standardised vectors (P4/E2.3). The romanized-vs-Devanagari comparison directly measures the transliteration benefit (E2.1).",
+  "pairs": [
+    {"hi_roman": "akelapan", "hi_deva": "अकेलापन", "en": "loneliness", "tier": 2},
+    {"hi_roman": "akela", "hi_deva": "अकेला", "en": "alone", "tier": 2},
+    {"hi_roman": "tanha", "hi_deva": "तनहा", "en": "lonely", "tier": 2},
+    {"hi_roman": "udaas", "hi_deva": "उदास", "en": "sad", "tier": 2},
+    {"hi_roman": "rona", "hi_deva": "रोना", "en": "crying", "tier": 2},
+    {"hi_roman": "khali", "hi_deva": "खाली", "en": "empty", "tier": 2},
+    {"hi_roman": "khaalipan", "hi_deva": "खालीपन", "en": "emptiness", "tier": 2},
+    {"hi_roman": "dard", "hi_deva": "दर्द", "en": "pain", "tier": 2},
+    {"hi_roman": "ghutan", "hi_deva": "घुटन", "en": "suffocating", "tier": 2},
+    {"hi_roman": "ghabrahat", "hi_deva": "घबराहट", "en": "anxiety", "tier": 2},
+    {"hi_roman": "pareshan", "hi_deva": "परेशान", "en": "stressed", "tier": 1},
+    {"hi_roman": "chinta", "hi_deva": "चिंता", "en": "worry", "tier": 1},
+    {"hi_roman": "bechaini", "hi_deva": "बेचैनी", "en": "restless", "tier": 1},
+    {"hi_roman": "thak gaya", "hi_deva": "थक गया", "en": "exhausted", "tier": 1},
+    {"hi_roman": "marna", "hi_deva": "मरना", "en": "die", "tier": 3},
+    {"hi_roman": "marna chahta", "hi_deva": "मरना चाहता", "en": "want to die", "tier": 3},
+    {"hi_roman": "jeena nahi chahta", "hi_deva": "जीना नहीं चाहता", "en": "do not want to live", "tier": 3},
+    {"hi_roman": "khudkushi", "hi_deva": "खुदकुशी", "en": "suicide", "tier": 3},
+    {"hi_roman": "atmahatya", "hi_deva": "आत्महत्या", "en": "suicide", "tier": 3},
+    {"hi_roman": "zindagi khatam", "hi_deva": "ज़िंदगी खत्म", "en": "end my life", "tier": 3}
+  ]
+}

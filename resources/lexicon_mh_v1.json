@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "name": "Hinglish + English mental-health clinical lexicon (Tier 0-3)",
+  "provenance": "Seeded from published Hinglish/English clinical lexicons (Garg 2023; Alakananda et al. 2025) and the methodology's anchor terms. Romanized Hinglish + Devanagari + English clinical register. Versioned so it can be audited and cited (design Part 1.2 §2/D2).",
+  "notes": "Matching is word-boundary, case-insensitive, accent/NFC-normalized. Multi-word phrases match as substrings on normalized text. Tiers are ordered by severity; the weak labeler assigns the HIGHEST matched tier (escalation rule), subject to the topical/sarcasm demotion list.",
+  "tiers": {
+    "1": {
+      "name": "Stress",
+      "definition": "Everyday stress / pressure / tension language.",
+      "terms": [
+        "stress", "stressed", "stressful", "tension", "tensed", "pressure",
+        "pareshan", "preshan", "pareshaan", "chinta", "chintit", "worried", "worry",
+        "frustrated", "frustration", "overwhelmed", "burnout", "burn out", "burnt out",
+        "thak gaya", "thak gayi", "thak gaye", "exhausted", "exam tension", "exam stress",
+        "kaam ka pressure", "padhai ka pressure", "deadline", "overworked", "anxious about",
+        "ghabrahat", "bechaini", "restless", "irritated", "chidchidapan",
+        "तनाव", "चिंता", "परेशान", "घबराहट"
+      ]
+    },
+    "2": {
+      "name": "Moderate",
+      "definition": "Depression / anxiety indicators, sustained low mood.",
+      "terms": [
+        "depression", "depressed", "depressing", "anxiety", "anxious", "panic attack",
+        "panic attacks", "hopeless", "hopelessness", "worthless", "worthlessness",
+        "empty inside", "khali khali", "khaalipan", "numb", "numbness",
+        "akelapan", "akela", "akeli", "tanha", "tanhai", "lonely", "loneliness", "alone",
+        "udaas", "udasi", "sad all the time", "low feeling", "mann nahi lagta",
+        "rona", "ro raha", "ro rahi", "rota rehta", "roti rehti", "crying", "cry all",
+        "nind nahi", "neend nahi", "neend nahi aati", "insomnia", "can't sleep", "cant sleep",
+        "bhook nahi", "bhukh nahi", "no appetite", "demotivated", "no motivation",
+        "ghutan", "ghut raha", "suffocating", "dard", "andar se toot", "toot gaya", "toot gayi",
+        "अवसाद", "निराशा", "अकेलापन", "उदास", "घबराहट के दौरे"
+      ]
+    },
+    "3": {
+      "name": "Crisis",
+      "definition": "Suicidal ideation / self-harm (rare, high-severity class).",
+      "terms": [
+        "suicide", "suicidal", "kill myself", "killing myself", "end my life",
+        "end it all", "want to die", "wanna die", "better off dead", "no reason to live",
+        "self harm", "self-harm", "cutting myself", "hurt myself", "harm myself",
+        "khudkushi", "khud kushi", "atmahatya", "aatmahatya", "marna chahta",
+        "marna chahti", "mar jaun", "mar jaana", "mar jana", "mar jau", "marr jau",
+        "jeena nahi chahta", "jeena nahi chahti", "jeene ka mann nahi", "jeene ka man nahi",
+        "jeene ki ichha nahi", "zindagi khatam", "jaan de", "jaan dena", "nas kaat",
+        "nas kaatna", "khatam kar lunga", "khatam kar dungi", "ab nahi jeena",
+        "आत्महत्या", "खुदकुशी", "मरना चाहता", "जीना नहीं चाहता", "जान दे दूंगा"
+      ]
+    }
+  },
+  "topical_demote": [
+    "the great depression", "great depression", "economic depression",
+    "depression era", "recession", "geographic depression", "weather depression",
+    "tropical depression", "depression cooking", "anxiety disorder symptoms list",
+    "movie", "film", "trailer", "song", "lyrics", "gaana", "gana", "quote", "shayari",
+    "news", "headline", "report says", "study finds", "article", "according to",
+    "stock market", "nifty", "sensex", "exam date", "exam result", "syllabus"
+  ]
+}

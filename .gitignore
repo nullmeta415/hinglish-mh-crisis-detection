@@ -1,0 +1,38 @@
+# --- Secrets: never commit ---
+.env
+*.key
+
+# --- Python virtual environment ---
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+venv_install.log
+
+# --- Real harvested dataset (privacy + platform ToS) ---
+# The raw scraped corpus is NOT distributed. Re-create it with notebook 01,
+# or work from the small synthetic sample in data/sample/.
+# Ignore EVERYTHING under data/ except the synthetic sample and this folder's README.
+data/*
+!data/sample/
+!data/sample/**
+!data/README.md
+!data/release/
+!data/release/**
+
+# --- Large model checkpoints ---
+*.pt
+results/checkpoints/
+
+# --- Internal-only material (design docs, credentials, run logs -- not for distribution) ---
+_exclude_from_submission/
+
+# --- Reproducibility script run artifacts ---
+scripts/*.log
+scripts/error_*.txt
+
+# --- Jupyter / OS noise ---
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

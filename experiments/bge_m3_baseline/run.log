@@ -1,0 +1,35 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 39773.31it/s]
+  embedded 16/1971
+  embedded 416/1971
+  embedded 816/1971
+  embedded 1216/1971
+  embedded 1616/1971
+  embedded 16/2768
+  embedded 416/2768
+  embedded 816/2768
+  embedded 1216/2768
+  embedded 1616/2768
+  embedded 2016/2768
+  embedded 2416/2768
+embeddings (1971, 1024) (2768, 1024), 1364 s
+bge_text seed 42: acc 0.604 mF1 0.273 MCC 0.212 AUC 0.837 CrisisR 0.022 fit 50.0s
+bge_text seed 2023: acc 0.606 mF1 0.277 MCC 0.220 AUC 0.836 CrisisR 0.022 fit 55.3s
+bge_text seed 2024: acc 0.603 mF1 0.272 MCC 0.207 AUC 0.836 CrisisR 0.022 fit 58.2s
+bge_text seed 0: acc 0.608 mF1 0.280 MCC 0.228 AUC 0.836 CrisisR 0.022 fit 70.2s
+bge_text seed 7: acc 0.603 mF1 0.271 MCC 0.208 AUC 0.836 CrisisR 0.022 fit 59.2s
+bge_signals seed 42: acc 0.616 mF1 0.287 MCC 0.249 AUC 0.853 CrisisR 0.000 fit 161.3s
+bge_signals seed 2023: acc 0.621 mF1 0.293 MCC 0.266 AUC 0.857 CrisisR 0.000 fit 174.3s
+bge_signals seed 2024: acc 0.617 mF1 0.288 MCC 0.254 AUC 0.856 CrisisR 0.000 fit 158.5s
+bge_signals seed 0: acc 0.617 mF1 0.287 MCC 0.251 AUC 0.856 CrisisR 0.000 fit 181.0s
+bge_signals seed 7: acc 0.618 mF1 0.290 MCC 0.257 AUC 0.855 CrisisR 0.000 fit 155.2s
+macro_f1 vs majority     p_raw 0.00001 p_BH 0.00003 sig True
+macro_f1 vs muril_probe  p_raw 0.00003 p_BH 0.00008 sig True
+macro_f1 vs text_only    p_raw 0.00906 p_BH 0.00906 sig True
+mcc      vs majority     p_raw 0.00001 p_BH 0.00003 sig True
+mcc      vs muril_probe  p_raw 0.00001 p_BH 0.00003 sig True
+mcc      vs text_only    p_raw 0.00140 p_BH 0.00156 sig True
+macro_f1 vs bge_text     p_raw 0.00004 p_BH 0.00009 sig True
+mcc      vs bge_text     p_raw 0.00008 p_BH 0.00013 sig True
+macro_f1 vs bge_signals  p_raw 0.00009 p_BH 0.00013 sig True
+mcc      vs bge_signals  p_raw 0.00042 p_BH 0.00053 sig True

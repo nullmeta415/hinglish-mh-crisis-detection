@@ -1,0 +1,41 @@
+# Python dependencies for the project.
+# Install everything with:  pip install -r requirements.txt
+# (Python 3.10+ recommended. A GPU is optional; everything runs on CPU.)
+
+# --- Core data handling ---
+numpy
+pandas
+pyarrow
+scipy
+scikit-learn
+
+# --- Deep learning + language models ---
+torch
+transformers
+accelerate
+sentencepiece
+
+# --- Language detection ---
+langid
+
+# --- Data collection (only needed to re-harvest the dataset) ---
+google-api-python-client   # YouTube Data API
+twscrape                   # Twitter/X
+requests                   # Reddit (Arctic Shift API)
+zstandard                  # reading compressed Reddit dumps
+python-dotenv              # reads credentials from the .env file
+
+# --- Notebooks + plotting ---
+ipykernel
+matplotlib
+
+# --- Reproducibility script (scripts/run_pipeline.py) ---
+nbformat
+nbclient
+nbconvert
+
+# --- Per-stage data as spreadsheets (data/stage*/csv/*.xlsx) ---
+openpyxl
+
+# --- Interactive demo (demo/app.py) ---
+streamlit
