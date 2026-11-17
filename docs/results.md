@@ -14,7 +14,7 @@
 | Platforms | YouTube (train) · Reddit + Twitter (test) |
 | Languages | English 67.6% · **Hinglish 30.2%** · Hindi 2.2% |
 | Risk tiers | Neutral · Stress · Moderate · Crisis |
-| Automatic-labelling agreement (Cohen's κ) | **0.84** ("almost perfect") |
+| Automatic-labelling agreement (Cohen's κ) | **0.82** ("almost perfect") |
 
 The corpus is genuinely **multilingual**, and — importantly — Hinglish is the *majority* language in the
 distress tiers (84% of Stress posts), reflecting that users code-switch into Hindi/Hinglish when expressing
@@ -31,11 +31,13 @@ distress.
 | ROC-AUC | **0.827** |
 | In-platform reference (5-fold CV) | **0.83** macro-F1 |
 
-Per-tier F1: Neutral ≈ 0.80 · Stress ≈ 0.49 · Moderate ≈ 0.48 · Crisis ≈ 0.10.
+Per-tier F1 (5-seed mean): Neutral 0.79 · Stress 0.49 · Moderate 0.47 · Crisis 0.10.
 
 **Statistical robustness (notebook 14).** Across 5 random seeds the scores are stable (tight confidence
-intervals), and the full model **significantly beats all baselines** (majority-class, a simple probe, and a
-text-only version) on **every comparison** after multiple-comparison correction.
+intervals), and the full model **significantly beats all five baselines** (majority-class, a frozen MuRIL probe, a
+text-only version, BGE-M3 + XGBoost on text, and BGE-M3 + XGBoost on text + signals) on **all 10
+comparisons** (macro-F1 and MCC; paired t-test, Benjamini–Hochberg q = 0.05). The BGE-M3 baselines
+are in [`../experiments/bge_m3_baseline/`](../experiments/bge_m3_baseline/).
 
 ---
 

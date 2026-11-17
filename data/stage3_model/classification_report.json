@@ -1,0 +1,88 @@
+{
+  "part": "stage3_part3.2_architecture",
+  "version": "1.0",
+  "principle": "P1; P2 (text primary, temporal auxiliary); P3 (train=youtube+synthetic, test=reddit+twitter FROZEN);  dual backbone;  Tier-A temporal;  routing;  ELU gate;  cross-modal fusion;  focal+contrastive",
+  "config": {
+    "routing": "static",
+    "gate": "elu",
+    "fusion": "attention",
+    "prim_caps": 32,
+    "prim_dim": 16,
+    "class_dim": 16,
+    "fusion_dim": 128,
+    "epochs": 60,
+    "lr": 0.001,
+    "batch": 16,
+    "focal_gamma": 2.0,
+    "contrast_w": 0.2,
+    "frozen_backbones": true,
+    "seed": 42
+  },
+  "backbones": {
+    "text": "google/muril-base-cased (mean-pool, frozen)",
+    "emotion": "MilaNLProc/xlm-emo-t (frozen)"
+  },
+  "trainable_params": 805572,
+  "train_seconds": 155.0,
+  "device": "cpu",
+  "test_metrics": {
+    "accuracy": 0.7023,
+    "macro_f1": 0.4916,
+    "mcc": 0.4572,
+    "roc_auc_ovr_macro": 0.8355,
+    "per_tier": {
+      "Neutral": {
+        "P": 0.6974,
+        "R": 0.9431,
+        "F1": 0.8018
+      },
+      "Stress": {
+        "P": 0.8625,
+        "R": 0.3798,
+        "F1": 0.5274
+      },
+      "Moderate": {
+        "P": 0.6676,
+        "R": 0.4044,
+        "F1": 0.5037
+      },
+      "Crisis": {
+        "P": 0.1724,
+        "R": 0.1087,
+        "F1": 0.1333
+      }
+    },
+    "tier3_recall": 0.1087,
+    "confusion_matrix": [
+      [
+        1491,
+        20,
+        63,
+        7
+      ],
+      [
+        294,
+        207,
+        40,
+        4
+      ],
+      [
+        333,
+        9,
+        241,
+        13
+      ],
+      [
+        20,
+        4,
+        17,
+        5
+      ]
+    ]
+  },
+  "temporal_mask_assert": {
+    "synthetic_temporal_zero": true,
+    "real_temporal_nonzero": true
+  },
+  "honest_note": "Pilot-scale architecture-correctness proof (202 TRAIN rows): real end-to-end forward/backward, real frozen-TEST predictions, all modules wired (dual backbone + capsule + routing + ELU gate + cross-modal attention fusion + focal+contrastive). Backbones FROZEN per the notebook 07 finding that fine-tuning 202 rows hurts. Numbers are provisional; the publishable model = data scale-up + GPU + Optuna (, notebook 10). P-series honesty."
+}
