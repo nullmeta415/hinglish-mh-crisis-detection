@@ -3,7 +3,7 @@
 Run with:
     .venv\\Scripts\\streamlit.exe run demo\\app.py
 
-Loads the trained Stage-A checkpoint (data/stage3_model/model_state.pt) and lets a user
+Loads the trained Stage-A checkpoint (data/stage3_model/model_state.pt, not shipped: see README §6) and lets a user
 type a post (English / Hindi / Hinglish) and see the live tier prediction, per-tier
 probabilities, and a live 32-step Integrated Gradients word-level explanation, cross-checked
 against the project's own clinical lexicon -- no retraining happens here.

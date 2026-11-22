@@ -21,7 +21,6 @@ data/*
 !data/release/
 !data/release/**
 !data/stage3_model/
-!data/stage3_model/model_state.pt
 !data/stage3_model/model_config.json
 !data/stage3_model/classification_report.json
 

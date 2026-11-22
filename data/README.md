@@ -10,8 +10,11 @@ the platforms' terms of service, so the raw corpus is **deliberately excluded** 
 
 ## What is included instead
 
-- **`release/corpus_ids_labels.csv`** — IDs, URLs, timestamps, splits and tier labels for all
-  4,614 posts used in the paper, without post text (see §6 of the top-level README).
+- **`release/corpus_ids_labels.csv`** — one row per post for all 4,614 posts used in the paper:
+  an internal random `record_id`, platform, train/test split, posting month, language and tier label
+  (with how it was assigned and its confidence). It holds **no post text, URLs, platform post IDs,
+  user hashes or exact timestamps**, so no row can be traced back to a person (see §6 of the
+  top-level README).
 
 - **`sample/example_corpus.jsonl`** — a tiny, **fully synthetic** example (the rows are made up, not
   real people) that shows the exact format the notebooks expect.

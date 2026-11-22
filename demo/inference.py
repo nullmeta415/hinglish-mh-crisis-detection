@@ -193,7 +193,10 @@ class DriftCapsNetPipeline:
             text_dim=CONFIG["text_dim"], emo_dim=CONFIG["emo_dim"],
             gate=CONFIG["gate"], fusion=CONFIG["fusion"], routing=CONFIG["routing"],
         ).to(DEVICE)
-        state = torch.load(MODEL_DIR / "model_state.pt", map_location=DEVICE)
+        ckpt = MODEL_DIR / "model_state.pt"
+        if not ckpt.exists():  # not shipped for privacy reasons (README §6)
+            raise FileNotFoundError(f"{ckpt} not found: run notebook 09 to train it, or request it from the authors.")
+        state = torch.load(ckpt, map_location=DEVICE)
         self.model.load_state_dict(state)
         self.model.eval()
         for p in list(self.muril_model.parameters()) + list(self.emo_model.parameters()) + list(self.model.parameters()):

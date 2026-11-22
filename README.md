@@ -82,8 +82,8 @@ hinglish-mental-health-detection/
 ├── demo/                ← interactive Streamlit app — try the trained model live (see §4)
 ├── resources/           ← word lists & lookup tables the notebooks use
 ├── data/
-│   ├── release/          ← post IDs + labels for all 4,614 posts (no post text, see §6)
-│   ├── stage3_model/     ← trained checkpoint + config used by the demo
+│   ├── release/          ← de-identified labels for all 4,614 posts (see §6)
+│   ├── stage3_model/     ← model config + classification report (checkpoint on request, see §6)
 │   └── sample/           ← a tiny synthetic example showing the input format
 ├── experiments/          ← BGE-M3 + XGBoost baseline and training-curve logging (paper baselines)
 ├── figures/              ← scripts that draw the paper's figures
@@ -129,8 +129,9 @@ python scripts/run_pipeline.py 09_model_architecture  # or resume from any singl
 streamlit run demo/app.py
 ```
 
-Loads the trained checkpoint shipped in this repository (`data/stage3_model/model_state.pt`, 3 MB,
-seed 42, produced by notebook 09 — no retraining happens in the app) and lets you type a post in English, Hindi, or Hinglish and see, live: the predicted tier,
+Needs the trained checkpoint `data/stage3_model/model_state.pt` (seed 42, produced by notebook 09).
+It is **not shipped** because it was trained on real users' posts: re-create it by running notebook 09,
+or request it from the authors (see §6). No retraining happens in the app. With the checkpoint in place, it lets you type a post in English, Hindi, or Hinglish and see, live: the predicted tier,
 a word-by-word Integrated Gradients explanation, a cross-check against the clinical lexicon, and a
 breakdown of how much the text vs. the emotion signal vs. the time of posting actually drove that
 specific prediction.
@@ -171,25 +172,25 @@ typed. The demo measures and discloses this per-prediction rather than hiding it
 ## 6. Ethics & data
 
 - **Screening aid, not a diagnosis.**
-- **Post text is not distributed.** The corpus is real users' posts about mental health, so releasing
-  the text would breach their privacy and the platforms' terms. Instead,
-  [`data/release/corpus_ids_labels.csv`](data/release/corpus_ids_labels.csv) lists every post used in
-  the paper with its platform, train/test split, native ID and URL, timestamp, pseudonymous user
-  hash, language, and tier label. Reddit rows carry the comment ID and permalink and X rows the
-  status ID, so they can be re-collected directly. YouTube comment IDs were not stored at
-  collection time, so YouTube rows carry the video ID and the comment's exact `timestamp`, which
-  identifies the comment within that video's comment thread. Posts deleted since collection
-  cannot be recovered. `scripts/export_release_ids.py` shows how this file was made.
-  Notebook 01 re-collects posts; notebooks 02–16 then run on the re-collected corpus.
+- **No post text, links or user identifiers are distributed.** The corpus is real users' posts about
+  mental health. Publishing the text, or anything that points back to a post (URL, platform post ID,
+  exact timestamp, user hash), would let a reader find the person and see their mental-health label.
+  Instead, [`data/release/corpus_ids_labels.csv`](data/release/corpus_ids_labels.csv) lists every post
+  used in the paper with only an internal random `record_id`, platform, train/test split, posting
+  month, language and tier label, enough to check the class balance, splits and per-platform counts
+  reported in the paper. `scripts/export_release_ids.py` shows how this file was made.
+  Notebook 01 collects a fresh corpus; notebooks 02–16 then run on it.
+- **Trained model.** The checkpoint is not published, because a model trained on real posts can
+  memorise parts of them. Its configuration and test-set report are in `data/stage3_model/`.
 - **Privacy.** Usernames are never stored — they are replaced by a salted, one-way hash. Example
   outputs inside the notebooks that quoted real posts have been redacted.
 - **Credentials** live only in a local `.env` file, which is never committed.
-- The full pseudonymized corpus is available from the authors on reasonable request for
-  research use, subject to ethics approval.
+- The pseudonymized corpus, the post-level identifiers and the trained checkpoint are available from
+  the authors on reasonable request for research use, subject to ethics approval and a data-use agreement.
 
 ## 7. Citation
 
-If you use this code or the released IDs and labels, please cite the paper:
+If you use this code or the released labels, please cite the paper:
 
 > *An Explainable Multi-Signal Framework for Early Detection of Mental-Health Crisis in Hindi–English
 > Code-Mixed Social Media Posts.* (Under review.)
