@@ -88,7 +88,6 @@ hinglish-mental-health-detection/
 │   └── sample/           ← a tiny synthetic example showing the input format
 ├── experiments/          ← BGE-M3 + XGBoost baseline and training-curve logging (paper baselines)
 ├── figures/              ← scripts that draw the paper's figures
-├── results/              ← figures and result files produced by the pipeline
 └── docs/                 ← methodology & results write-ups
 ```
 
@@ -113,7 +112,7 @@ cp .env.example .env      # then edit .env with your own keys
 
 The pipeline notebooks (and `scripts/run_pipeline.py`, which re-executes notebooks 02–16 in order)
 need the notebooks themselves, which are available from the authors on request (see §6). The
-published result files in [`results/`](results/) and [`docs/results.md`](docs/results.md) can be read
+results summary in [`docs/results.md`](docs/results.md) can be read
 without running anything.
 
 ### Try the trained model live
@@ -145,8 +144,8 @@ as reported in the paper:
 | Crisis (Tier-3) recall | **0.100** | 0.044 – 0.156 |
 | In-platform validation (5-fold) | **0.834** macro-F1 | |
 
-Per-seed numbers: [`results/reports/14_seed_metrics.json`](results/reports/14_seed_metrics.json);
-significance tests: [`results/reports/14_significance.json`](results/reports/14_significance.json).
+Per-seed numbers and significance tests are in [`docs/results.md`](docs/results.md); the full result
+files are available from the authors on request.
 
 The explainability checks confirm the model keys on **meaningful distress words** (e.g. *pareshan*,
 *akelapan*), not on surface cues — and it stays accurate **within each language** (English, Hinglish,

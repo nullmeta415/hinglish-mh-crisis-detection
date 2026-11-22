@@ -28,6 +28,8 @@ data/*
 data/release/corpus_ids_labels_full.csv
 data/stage3_model/model_state.pt
 notebooks/*.ipynb
+results/reports/
+results/figures/
 
 # --- Large model checkpoints ---
 *.pt

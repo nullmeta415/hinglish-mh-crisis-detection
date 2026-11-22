@@ -90,7 +90,7 @@ Good science states what *doesn't* work:
 
 ## Figures
 
-Key figures are in [`../results/figures/`](../results/figures/), including the confusion matrix
+The key figures (available from the authors on request) include the confusion matrix
 (`confusion_consolidated.png`), per-tier triggers (`global_triggers_*.png`), the cross-method explanation
 agreement (`method_agreement.png`), per-platform fairness (`platform_parity.png`), the seed confidence
 intervals (`seed_ci.png`), and the early-detection curve (`erde_curve.png`).
