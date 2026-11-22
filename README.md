@@ -4,9 +4,10 @@ Detecting signs of mental-health distress in **Hinglish** (mixed Hindi–English
 across **three platforms** (YouTube, Reddit, Twitter/X), and explaining *why* the model makes each
 decision.
 
-This repository contains the full, runnable methodology — from collecting the data all the way to
-validating the final model — split into **16 short, well-commented notebooks** that you can read in
-order, top to bottom.
+This repository documents the methodology — from collecting the data all the way to validating the
+final model — and ships the demo, the baseline and figure scripts, the word lists, and all result
+files. The **16 pipeline notebooks** that implement each step are **not published**; they are
+available from the authors on request (see §6).
 
 > ⚕️ **Important:** This is a **research screening aid, not a diagnostic tool.** It produces risk
 > *signals* to help a human prioritise attention. It must never be used to make automated decisions
@@ -37,8 +38,8 @@ measure real-world generalisation, (c) tracks how a person's language **changes 
 
 ## 2. How the pipeline fits together
 
-The work follows **five objectives**, implemented by the **16 notebooks** in [`notebooks/`](notebooks/).
-Read them in numerical order — each one explains what it does, why, and shows its results.
+The work follows **five objectives**, implemented by **16 notebooks** (available from the authors on request, see §6).
+The table lists what each one does.
 
 | # | Notebook | What it does |
 |:-:|----------|--------------|
@@ -76,7 +77,7 @@ hinglish-mental-health-detection/
 ├── README.md            ← you are here
 ├── requirements.txt     ← Python packages to install
 ├── .env.example         ← template for your API keys (copy to .env)
-├── notebooks/           ← the 16 pipeline notebooks (read these in order)
+├── notebooks/           ← README only; the 16 pipeline notebooks are available on request (§6)
 ├── scripts/
 │   └── run_pipeline.py  ← re-executes notebooks 02–16 end-to-end (see §4)
 ├── demo/                ← interactive Streamlit app — try the trained model live (see §4)
@@ -87,7 +88,7 @@ hinglish-mental-health-detection/
 │   └── sample/           ← a tiny synthetic example showing the input format
 ├── experiments/          ← BGE-M3 + XGBoost baseline and training-curve logging (paper baselines)
 ├── figures/              ← scripts that draw the paper's figures
-├── results/              ← figures and result files produced by the notebooks
+├── results/              ← figures and result files produced by the pipeline
 └── docs/                 ← methodology & results write-ups
 ```
 
@@ -108,20 +109,12 @@ pip install -r requirements.txt
 
 # 3. (Only if you want to collect fresh data) add your API keys
 cp .env.example .env      # then edit .env with your own keys
-
-# 4. Open the notebooks and read/run them in order
-jupyter notebook notebooks/
 ```
 
-Every notebook in [`notebooks/`](notebooks/) is committed **with real, executed output** — so you
-do not need to run anything to read through the explanations, code, and results. If you do want to
-reproduce them yourself, `scripts/run_pipeline.py` re-executes notebooks 02–16 end-to-end in order
-(notebook 01 is excluded — it calls live platform APIs and needs real credentials, see step 3 above):
-
-```bash
-python scripts/run_pipeline.py                       # full pipeline, in order
-python scripts/run_pipeline.py 09_model_architecture  # or resume from any single notebook
-```
+The pipeline notebooks (and `scripts/run_pipeline.py`, which re-executes notebooks 02–16 in order)
+need the notebooks themselves, which are available from the authors on request (see §6). The
+published result files in [`results/`](results/) and [`docs/results.md`](docs/results.md) can be read
+without running anything.
 
 ### Try the trained model live
 
@@ -130,8 +123,7 @@ streamlit run demo/app.py
 ```
 
 Needs the trained checkpoint `data/stage3_model/model_state.pt` (seed 42, produced by notebook 09).
-It is **not shipped** because it was trained on real users' posts: re-create it by running notebook 09,
-or request it from the authors (see §6). No retraining happens in the app. With the checkpoint in place, it lets you type a post in English, Hindi, or Hinglish and see, live: the predicted tier,
+It is **not shipped** because it was trained on real users' posts: request it from the authors (see §6). No retraining happens in the app. With the checkpoint in place, it lets you type a post in English, Hindi, or Hinglish and see, live: the predicted tier,
 a word-by-word Integrated Gradients explanation, a cross-check against the clinical lexicon, and a
 breakdown of how much the text vs. the emotion signal vs. the time of posting actually drove that
 specific prediction.
@@ -179,13 +171,12 @@ typed. The demo measures and discloses this per-prediction rather than hiding it
   used in the paper with only an internal random `record_id`, platform, train/test split, posting
   month, language and tier label, enough to check the class balance, splits and per-platform counts
   reported in the paper. `scripts/export_release_ids.py` shows how this file was made.
-  Notebook 01 collects a fresh corpus; notebooks 02–16 then run on it.
 - **Trained model.** The checkpoint is not published, because a model trained on real posts can
   memorise parts of them. Its configuration and test-set report are in `data/stage3_model/`.
-- **Privacy.** Usernames are never stored — they are replaced by a salted, one-way hash. Example
-  outputs inside the notebooks that quoted real posts have been redacted.
+- **Privacy.** Usernames are never stored — they are replaced by a salted, one-way hash.
 - **Credentials** live only in a local `.env` file, which is never committed.
-- The pseudonymized corpus, the post-level identifiers and the trained checkpoint are available from
+- The pseudonymized corpus, the post-level identifiers, the pipeline notebooks and the trained
+  checkpoint are available from
   the authors on reasonable request for research use, subject to ethics approval and a data-use agreement.
 
 ## 7. Citation

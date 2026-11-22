@@ -1,6 +1,6 @@
 # Methodology
 
-The implementation of every step lives in the matching notebook in [`../notebooks/`](../notebooks/).
+The implementation of every step lives in a matching notebook; the notebooks are available from the authors on request (see §6 of the top-level README).
 
 ---
 

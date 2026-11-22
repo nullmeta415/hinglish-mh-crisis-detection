@@ -1,3 +1,6 @@
+> **The notebooks are not published in this repository.** They are available from the authors on
+> reasonable request for research use (see §6 of the top-level README). This file describes them.
+
 # Notebooks
 
 Read these in order — each one is self-contained, explains what it does, and is saved **with its outputs**

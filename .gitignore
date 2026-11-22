@@ -27,6 +27,7 @@ data/*
 # --- Private, local only: re-identifiable labels file and the trained checkpoint (README §6) ---
 data/release/corpus_ids_labels_full.csv
 data/stage3_model/model_state.pt
+notebooks/*.ipynb
 
 # --- Large model checkpoints ---
 *.pt

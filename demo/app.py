@@ -240,5 +240,5 @@ if run:
 st.divider()
 st.caption(
     "This demo loads the already-trained Stage-A model checkpoint (data/stage3_model/model_state.pt) — "
-    "no training happens in this app. Full methodology and evaluation: notebooks/ in this repository."
+    "no training happens in this app. Full methodology and evaluation: docs/ in this repository."
 )

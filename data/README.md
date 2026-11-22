@@ -37,7 +37,8 @@ Each line is one post. The fields the model actually uses are:
 
 ## How to rebuild the real dataset
 
-Open **`notebooks/01_data_collection.ipynb`**. It collects fresh posts from all three platforms using
+Notebook **`01_data_collection`** (available from the authors on request, see §6 of the top-level
+README) collects fresh posts from all three platforms using
 your own API keys (copy `.env.example` to `.env` and fill them in first). The collected files are
 written here, into `data/`, and the later notebooks pick them up automatically.
 
